@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.14)  10 OCT 2019 00:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.14)  11 OCT 2019 00:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -708,12 +708,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--48
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--57
+Underfull \hbox (badness 10000) in paragraph at lines 54--56
 
  []
 
-[3] [4]
-Overfull \hbox (0.5284pt too wide) in paragraph at lines 196--197
+[3]
+Overfull \hbox (0.18587pt too wide) in paragraph at lines 89--90
+\OT1/cmr/m/n/10 dar^^S^^Pa el sim-u-lador. Un buen ejem-plo ser^^S^^Pa poner la
+ prob-a-bil-i-dad de aparcamiento
+ []
+
+[4]
+Overfull \hbox (0.5284pt too wide) in paragraph at lines 195--196
 []\OT1/cmr/m/n/10 Mezcla de am-bos: Mez-clare-mos la visi^^Son y la prob-a-bil-
 i-dad de aparcamiento
  []
@@ -722,44 +728,45 @@ i-dad de aparcamiento
 <img/screenshot011.png, id=131, 424.58624pt x 335.00156pt>
 File: img/screenshot011.png Graphic file (type png)
 <use img/screenshot011.png>
-Package pdftex.def Info: img/screenshot011.png  used on input line 206.
+Package pdftex.def Info: img/screenshot011.png  used on input line 203.
 (pdftex.def)             Requested size: 345.0pt x 272.21877pt.
 <img/screenshot008.png, id=132, 429.85594pt x 333.49594pt>
 File: img/screenshot008.png Graphic file (type png)
 <use img/screenshot008.png>
-Package pdftex.def Info: img/screenshot008.png  used on input line 215.
+Package pdftex.def Info: img/screenshot008.png  used on input line 211.
 (pdftex.def)             Requested size: 345.0pt x 267.66728pt.
  [6 <./img/screenshot011.png (PNG copy)>]
 <img/screenshot014.png, id=138, 465.23813pt x 341.77687pt>
 File: img/screenshot014.png Graphic file (type png)
 <use img/screenshot014.png>
-Package pdftex.def Info: img/screenshot014.png  used on input line 231.
+Package pdftex.def Info: img/screenshot014.png  used on input line 227.
 (pdftex.def)             Requested size: 345.0pt x 253.4533pt.
  [7 <./img/screenshot008.png (PNG copy)>]
 <img/screenshot013.png, id=145, 434.37282pt x 338.01282pt>
 File: img/screenshot013.png Graphic file (type png)
 <use img/screenshot013.png>
-Package pdftex.def Info: img/screenshot013.png  used on input line 239.
+Package pdftex.def Info: img/screenshot013.png  used on input line 235.
 (pdftex.def)             Requested size: 345.0pt x 268.48164pt.
- [8 <./img/screenshot014.png (PNG copy)>]
-Overfull \hbox (13.27835pt too wide) in paragraph at lines 249--250
+ [8 <./img/screenshot014.png (PNG copy)>] [9 <./img/screenshot013.png (PNG copy
+)>]
+Overfull \hbox (13.27835pt too wide) in paragraph at lines 246--247
 \OT1/cmr/m/n/10 En este caso va-mos a in-ten-tar obtener unos re-sul-ta-dos mez
 -clando los dos par^^Sametros
  []
 
 
-Overfull \hbox (10.65535pt too wide) in paragraph at lines 253--274
+Overfull \hbox (10.65535pt too wide) in paragraph at lines 250--271
  [] 
  []
 
-[9 <./img/screenshot013.png (PNG copy)>]
-Overfull \hbox (45.23848pt too wide) in paragraph at lines 290--291
+
+Overfull \hbox (45.23848pt too wide) in paragraph at lines 286--287
 []\OT1/cmr/bx/n/10 ./radares To-tal[]radares N$[]$[]piezas M^^S^^Pnimo[]reparac
 i^^Son M^^Saximo[]reparaci^^Son
  []
 
 
-Overfull \hbox (10.67206pt too wide) in paragraph at lines 298--348
+Overfull \hbox (10.65968pt too wide) in paragraph at lines 294--344
  [] 
  []
 
@@ -767,16 +774,16 @@ Overfull \hbox (10.67206pt too wide) in paragraph at lines 298--348
 <img/screenshot0016.png, id=164, 427.5975pt x 337.26pt>
 File: img/screenshot0016.png Graphic file (type png)
 <use img/screenshot0016.png>
-Package pdftex.def Info: img/screenshot0016.png  used on input line 358.
+Package pdftex.def Info: img/screenshot0016.png  used on input line 354.
 (pdftex.def)             Requested size: 345.0pt x 272.11385pt.
  [11]
 <img/screenshot0017.png, id=170, 428.35031pt x 343.2825pt>
 File: img/screenshot0017.png Graphic file (type png)
 <use img/screenshot0017.png>
-Package pdftex.def Info: img/screenshot0017.png  used on input line 367.
+Package pdftex.def Info: img/screenshot0017.png  used on input line 362.
 (pdftex.def)             Requested size: 345.0pt x 276.48587pt.
  [12 <./img/screenshot0016.png (PNG copy)>]
-Overfull \hbox (10.67206pt too wide) in paragraph at lines 374--391
+Overfull \hbox (10.65968pt too wide) in paragraph at lines 369--386
  [] 
  []
 
@@ -784,82 +791,82 @@ Overfull \hbox (10.67206pt too wide) in paragraph at lines 374--391
 <img/screenshot0018.png, id=183, 438.13687pt x 336.50719pt>
 File: img/screenshot0018.png Graphic file (type png)
 <use img/screenshot0018.png>
-Package pdftex.def Info: img/screenshot0018.png  used on input line 403.
+Package pdftex.def Info: img/screenshot0018.png  used on input line 398.
 (pdftex.def)             Requested size: 345.0pt x 264.98026pt.
-<img/screenshot0019.png, id=184, 422.32782pt x 335.00156pt>
+ [14 <./img/screenshot0018.png (PNG copy)>]
+<img/screenshot0019.png, id=189, 422.32782pt x 335.00156pt>
 File: img/screenshot0019.png Graphic file (type png)
 <use img/screenshot0019.png>
-Package pdftex.def Info: img/screenshot0019.png  used on input line 414.
+Package pdftex.def Info: img/screenshot0019.png  used on input line 408.
 (pdftex.def)             Requested size: 345.0pt x 273.67049pt.
- [14 <./img/screenshot0018.png (PNG copy)>]
-<img/screenshot0024.png, id=190, 812.28468pt x 406.51875pt>
+ [15 <./img/screenshot0019.png (PNG copy)>]
+<img/screenshot0024.png, id=195, 812.28468pt x 406.51875pt>
 File: img/screenshot0024.png Graphic file (type png)
 <use img/screenshot0024.png>
-Package pdftex.def Info: img/screenshot0024.png  used on input line 426.
+Package pdftex.def Info: img/screenshot0024.png  used on input line 422.
 (pdftex.def)             Requested size: 345.0pt x 172.65962pt.
- [15 <./img/screenshot0019.png (PNG copy)>]
 <img/screenshot0021.png, id=196, 461.47406pt x 341.02406pt>
 File: img/screenshot0021.png Graphic file (type png)
 <use img/screenshot0021.png>
-Package pdftex.def Info: img/screenshot0021.png  used on input line 434.
+Package pdftex.def Info: img/screenshot0021.png  used on input line 430.
 (pdftex.def)             Requested size: 241.49895pt x 178.4627pt.
- [16 <./img/screenshot0024.png (PNG copy)> <./img/screenshot0021.png (PNG copy)
->]
-<img/screenshot0030.png, id=203, 761.09344pt x 386.94562pt>
+ [16 <./img/screenshot0024.png (PNG copy)>]
+<img/screenshot0030.png, id=202, 761.09344pt x 386.94562pt>
 File: img/screenshot0030.png Graphic file (type png)
 <use img/screenshot0030.png>
-Package pdftex.def Info: img/screenshot0030.png  used on input line 444.
+Package pdftex.def Info: img/screenshot0030.png  used on input line 441.
 (pdftex.def)             Requested size: 345.0pt x 175.40515pt.
-<img/screenshot0031.png, id=204, 462.22687pt x 343.2825pt>
+ [17 <./img/screenshot0021.png (PNG copy)> <./img/screenshot0030.png (PNG copy)
+>]
+<img/screenshot0031.png, id=209, 462.22687pt x 343.2825pt>
 File: img/screenshot0031.png Graphic file (type png)
 <use img/screenshot0031.png>
-Package pdftex.def Info: img/screenshot0031.png  used on input line 453.
+Package pdftex.def Info: img/screenshot0031.png  used on input line 450.
 (pdftex.def)             Requested size: 241.49895pt x 179.35648pt.
- [17 <./img/screenshot0030.png (PNG copy)>] [18 <./img/screenshot0031.png (PNG 
-copy)>] [19]
-<img/screenshot0025.png, id=231, 502.87875pt x 332.74312pt>
+ [18 <./img/screenshot0031.png (PNG copy)>] [19]
+<img/screenshot0025.png, id=229, 502.87875pt x 332.74312pt>
 File: img/screenshot0025.png Graphic file (type png)
 <use img/screenshot0025.png>
-Package pdftex.def Info: img/screenshot0025.png  used on input line 567.
+Package pdftex.def Info: img/screenshot0025.png  used on input line 566.
 (pdftex.def)             Requested size: 345.0pt x 228.27798pt.
  [20 <./img/screenshot0025.png (PNG copy)>]
 <img/screenshot0026.png, id=238, 747.54282pt x 376.40625pt>
 File: img/screenshot0026.png Graphic file (type png)
 <use img/screenshot0026.png>
-Package pdftex.def Info: img/screenshot0026.png  used on input line 585.
+Package pdftex.def Info: img/screenshot0026.png  used on input line 583.
 (pdftex.def)             Requested size: 345.0pt x 173.71758pt.
-<img/screenshot0028.png, id=239, 798.73407pt x 323.70938pt>
-File: img/screenshot0028.png Graphic file (type png)
-<use img/screenshot0028.png>
-Package pdftex.def Info: img/screenshot0028.png  used on input line 593.
-(pdftex.def)             Requested size: 345.0pt x 139.81961pt.
-<img/screenshot0027.png, id=240, 451.6875pt x 342.5297pt>
+<img/screenshot0027.png, id=239, 451.6875pt x 342.5297pt>
 File: img/screenshot0027.png Graphic file (type png)
 <use img/screenshot0027.png>
-Package pdftex.def Info: img/screenshot0027.png  used on input line 601.
+Package pdftex.def Info: img/screenshot0027.png  used on input line 590.
 (pdftex.def)             Requested size: 241.49895pt x 183.1392pt.
- [21 <./img/screenshot0026.png (PNG copy)> <./img/screenshot0028.png (PNG copy)
+ [21 <./img/screenshot0026.png (PNG copy)>]
+<img/screenshot0028.png, id=246, 798.73407pt x 323.70938pt>
+File: img/screenshot0028.png Graphic file (type png)
+<use img/screenshot0028.png>
+Package pdftex.def Info: img/screenshot0028.png  used on input line 599.
+(pdftex.def)             Requested size: 345.0pt x 139.81961pt.
+ [22 <./img/screenshot0027.png (PNG copy)> <./img/screenshot0028.png (PNG copy)
 >]
-<img/screenshot0029.png, id=248, 449.42906pt x 344.78813pt>
+<img/screenshot0029.png, id=254, 449.42906pt x 344.78813pt>
 File: img/screenshot0029.png Graphic file (type png)
 <use img/screenshot0029.png>
-Package pdftex.def Info: img/screenshot0029.png  used on input line 611.
+Package pdftex.def Info: img/screenshot0029.png  used on input line 608.
 (pdftex.def)             Requested size: 241.49895pt x 185.27264pt.
- [22 <./img/screenshot0027.png (PNG copy)>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 630.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 626.
 
 [23 <./img/screenshot0029.png (PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 630.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 626.
  (./template_Article.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 630.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 630.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 626.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 626.
 Package rerunfilecheck Info: File `template_Article.out' has not changed.
-(rerunfilecheck)             Checksum: 723D4999242C1CA9776636B81A7CC4F0;1402.
+(rerunfilecheck)             Checksum: 6213392374A3495DFEC4D6CAFC8D4356;1415.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 630.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 626.
  ) 
 Here is how much of TeX's memory you used:
  8573 strings out of 494923
@@ -868,7 +875,7 @@ Here is how much of TeX's memory you used:
  11719 multiletter control sequences out of 15000+600000
  8205 words of font info for 29 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 44i,13n,42p,864b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,13n,42p,745b,406s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texli
@@ -876,7 +883,7 @@ ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmr7.pfb>
-Output written on template_Article.pdf (23 pages, 707836 bytes).
+Output written on template_Article.pdf (23 pages, 706858 bytes).
 PDF statistics:
  306 PDF objects out of 1000 (max. 8388607)
  254 compressed objects within 3 object streams
