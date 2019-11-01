@@ -133,6 +133,7 @@ int main(int argc, char *argv[])
     
     
     cout << "s:" << "ganacia:" << "desviación" << endl;
+    double mejor_s = 0,mejor_ganancia = 0;
     for (int s = 1; s < 100; s++)
     {
         double sum = 0.0, sum2 = 0.0;
@@ -150,8 +151,12 @@ int main(int argc, char *argv[])
         gananciaesperada = sum / veces;
         desviaciont = sqrt((sum2 - veces * gananciaesperada * gananciaesperada) / (veces - 1));
         cout << s << ":" << gananciaesperada << ":" << desviaciont << endl;
+        if(mejor_ganancia < gananciaesperada){
+            mejor_ganancia = gananciaesperada;
+            mejor_s = s;
+        }
     }
-
+    cout << "La mejor s es " << mejor_s << " con una ganancia de " << mejor_ganancia << endl;
     free(tablademanda);
 }
 //El programa principal debe también incluir lo siguiente:

@@ -89,10 +89,7 @@ int genera_demanda(float *tabla, int tama) // Genera un valor de la
     return i;
 }
 
-int genera_demanda_a(float *tabla, int tama) // Genera un valor de la
-                                           // distribución de la demanda codificada en tabla, por el
-                                           // método de tablas de búsqueda.
-                                           // tama es el tamaño de la tabla, 100 en nuestro caso particular
+int genera_demanda_a(float *tabla, int tama) 
 {
     int i;
     double u = uniforme();

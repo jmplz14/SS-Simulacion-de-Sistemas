@@ -1,0 +1,3 @@
+\contentsline {section}{\numberline {1}Construir un Modelo de Monte Carlo}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Primer Modelo}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Primera modificaci\IeC {\'o}n}{7}{subsection.1.2}
