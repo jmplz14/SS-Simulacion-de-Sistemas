@@ -82,14 +82,83 @@ Para trabar con horas tlleg = 0.15 y tserv = 0.1, si se quiera por ejemplo traba
 	\end{center}
 \end{table}
 
-En la tabla se ve claramente como los valores para las media de cliente en cola y tiempo ocioso del servidor llega un momento en que practicamente y pasan de ser muy bajas a ser siempre parecida. Esto se debe a que cunado se trabajan con unidades de tiempo altos como pueden ser las horas (tlleg = 0.15 y tserver = 0.1) o medias horas (tlleg = 0.3 y tserver = 0.2) los generadores obtienen valores muy bajos, siendo casi 0. Esto hace devuelva 1 casi siempre para el tiempo de servicio y llegada, los clientes estén llegando continuamente y el servidor este ocupado prácticamente siempre. En cambio al empezar a utilizar tiempos mas pequeños, a partir de minutos (tlleg = 9 y tserver = 9), si se tiene mas en cuenta la aleatoriedad y deja de devolver solo valores próximos a 0 consiguiendo ya resultados mas realistas.
+En la tabla se ve claramente como los valores para las media de cliente en cola y tiempo ocioso del servidor llega un momento en que prácticamente y pasan de ser muy bajas a ser siempre parecida. Esto se debe a que cunado se trabajan con unidades de tiempo altos como pueden ser las horas (tlleg = 0.15 y tserver = 0.1) o medias horas (tlleg = 0.3 y tserver = 0.2) los generadores obtienen valores muy bajos, siendo casi 0. Esto hace devuelva 1 casi siempre para el tiempo de servicio y llegada, los clientes estén llegando continuamente y el servidor este ocupado prácticamente siempre. En cambio al empezar a utilizar tiempos mas pequeños, a partir de minutos (tlleg = 9 y tserver = 6), si se tiene mas en cuenta la aleatoriedad y deja de devolver solo valores próximos a 0 consiguiendo ya resultados mas realistas.
 \newline
 
 Una vez visto esto y sabiendo que con medidas de tiempo mas pequeñas(tlleg y tserv mas grandes) analizaremos en estos el tiempo medio de cola y ocioso del servidor. Con esto vemos claramente como el servidor se mantiene ocioso prácticamente un 33\% del tiempo y en cola tenemos una media de 1.3 clientes.
 \newline
 
-A la hora de analizar el tiempo se observa como va creciendo, esto se debe a que con tiempos mas pequeños hace falta incrementar mas veces el reloj del simulador para llegar a un evento. 
+A la hora de analizar el tiempo se observa como va creciendo, esto se debe a que con unidades de tiempo mas pequeñas hace falta incrementar mas veces el reloj del simulador para llegar a un evento. 
+
+\section{Método de incremento variable de tiempo.}
+El método de incremento variable se basa en el condigo anterior añadiendo dos cambios sencillos. Por esto la forma del llamar al pograma es la misma que en el caso anterior.
+\newline
+
+Los cambios principales se basa en que dejamos de trabajar con el tiempo en como entero y utilizaremos un float. Nuestro generadores anteriores tenían que redondear el float para devolver un numero entero, en este método esto no es necesario por lo que el generador devolverla el float sin la necesidad de redondear ni comprobar si el redondeo lo convirtió en un 0. El ultimo cambio es que el reloj no aumenta de unidad en unidad, el reloj en este caso avanza hasta el evento mas cercano en el tiempo. En nuestro caso sera o la llegada de un nuevo cliente al servidor o que un cliente deje de utilizar el servido. 
+\newline
+
+Vamos a ejecutar con los mismos datos que en el ejemplo anterior para comparar.
+	\begin{table}[H]
+		\begin{center}
+			\begin{tabularx}{0.9\textwidth}{|X|X|X|X|X|}
+				\hline
+				\textbf{T. de llegada (tlleg)} & \textbf{T. servicio(tserv)}&\textbf{Media de clientes en cola} & \textbf{Media \% de tiempo ocioso Servidor} & \textbf{T. medio de ejecución (seg)} \\
+				\hline \hline
+				0.15 & 0.1 & 1.32145 & 33.396 &0.0009926\\ \hline
+				0.30 & 0.2 & 1.34731 & 33.1729 &0.00103374 \\ \hline
+				9 & 6& 1.33189 & 33.3837  &0.00105938\\ \hline
+				540 & 360 & 1.36657 &33.4256 & 0.00105644 \\ \hline
+				5400 & 3600 & 1.33417 & 33.0666 &0.0010442\\ \hline
+				54000 & 36000 & 1.32711  & 33.2303 & 0.00104676 \\ \hline
+				
+			\end{tabularx}
+			
+		\end{center}
+	\end{table}
+Empecemos analizando el tiempo. En este caso el tiempo no aumenta solo una unidad, sino que salta al evento mas cercano. Esto hace que el tiempo de ejecucion no dependa de la distancia entre un evento y el estado actual, si no del numero de eventos que se den durante la ejecucion del simulador. Para este ejemplo he ejecutado para 10000 cliente, y cada cliente utiliza el servidor una vez. Solo tendremos 20000 eventos y seran lo que necesitemos procesar. Da igual la unidad que utilicemos, solo se tiene el cuenta la cantidad de evento que tendremos que ejecutar. Por tanto el tiempo medio de ejecucion como se ve en la tabla es el mismo para todos los ejemplos quitando las pequeñas sobrecargas que pudiera tener el procesador al ejecutarlors.
+\newline
+
+Si nos centramos en las medias de clientes en cola y tiempo ocioso del servidor, vemos que no ocurre lo mismo que con el incremento fijo. En este caso no pasamos de unas medias muy bajas a unas mas altas, sino que se mantienen las medias durante todas las ejecuciones en los mismos valores. Esto se debe a que en este caso como explique anteriormente al estar trabajando con float no tenemos el problema con unidades de tiempo grandes, como por ejemplo horas (tlleg = 0.15 y tserv = 0.1). Aunque obtengamos valores próximos a 0 con los generadores, nuestro simulador si puede trabajar con estos y no los redondea a 1 como en el apartado anterior. Con esto podemos asegurar que con el incremento variables, la unidad de tiempo que elijamos no nos afectara a la hora de obtener las medias.
+\newline
+\newpage
+Vamos a comparar nuestros resultados con los resultados obtenidos teóricamente. Cuando $n \rightarrow+\infty$, sabes teoricamente que:
+ 
+$$\rho=\frac{ { tserv }}{ { tII eg }},\ Q(n) \rightarrow \frac{\rho^{2}}{1-\rho},\ P T O(n) \rightarrow 100 *(1-\rho)$$
+
+Vamos a sustituir y resolver con los valores para horas:
+
+$$\rho=\frac{ { 0.1 }}{ { 0.15 }} = 0.667 $$
+
+$$Q(n) \rightarrow \frac{0.667^{2}}{1-0.667} = 1.334 $$
+
+$$P T O(n) \rightarrow 100*(1-0.667) = 33,334$$
+
+Con esto vemos como teóricamente tenemos resultados prácticamente iguales a los conseguidos con el incremento variable. En cambio si miramos los resultados que conseguimos con el incremento fijo:
+\begin{table}[H]
+	\begin{center}
+		\begin{tabularx}{0.9\textwidth}{|X|X|X|X|X|}
+			\hline
+			\textbf{T. de llegada (tlleg)} & \textbf{T. servicio(tserv)}&\textbf{Media de clientes en cola} & \textbf{Media \% de tiempo ocioso Servidor} & \textbf{T. medio de ejecución (seg)} \\
+			\hline \hline
+			0.15 & 0.1 & 0.0233562 & 0.135782 &0.00116736\\ \hline
+		\end{tabularx}
+		
+	\end{center}
+\end{table}
+
+Vemos que no se acercan ni lo mas mínimo a los resultados teóricos. Esto ya nos asegura todo los indicios anteriores de que el método fijo tiene problemas para conseguir resultados realistas con valores altos de tiempo.
+
+
+
+
+
+
+
 
 \end{document}
+
+Vamos a ve
+
+
 
 

@@ -11,8 +11,7 @@ float generaLlegada(float tlleg)
 
     float u = (float)random();
     u = (float)(u / (RAND_MAX + 1.0));
-    u = ceil(-tlleg * log(1 - u));
-    return u == 0 ? 1.0 : u;
+    return -tlleg * log(1 - u);
 }
 
 float generaServicio(float tserv)
@@ -20,8 +19,7 @@ float generaServicio(float tserv)
 
     float u = (float)random();
     u = (float)(u / (RAND_MAX + 1.0));
-    u = ceil(-tserv * log(1 - u));
-    return u == 0 ? 1.0 : u;
+    return -tserv * log(1 - u);
 
 }
 
@@ -55,10 +53,10 @@ int main(int argc, char *argv[])
 
     for(int i = 0; i < numero_repes; i++){
         bool servidor_libre = true;
-        long long int  tiempo_llegada;
-        long long int infinito = 1e30, atendidos = 0, reloj = 0, encola = 0, tiempo_salida = infinito, tultsuc = reloj;
 
-        double inicio_ocio = 0.0, acum_cola = 0.0, ocio = 0.0, porcent_ocio, media_encola;
+        long long int infinito = 1e30, atendidos = 0, encola = 0;
+
+        double tiempo_llegada, tiempo_salida = infinito, inicio_ocio = 0.0, acum_cola = 0.0, ocio = 0.0, porcent_ocio, media_encola,reloj = 0.0,tultsuc = reloj;
         
 
         tiempo_llegada = reloj + generaLlegada(tlleg);
@@ -69,14 +67,12 @@ int main(int argc, char *argv[])
             if (reloj == tiempo_llegada) //si estamos en el instante en que llega alguien
             {
                 
-                float llegada = generaLlegada(tlleg);
-                tiempo_llegada = reloj + static_cast<long long int>(llegada); //determinamos cuando llegará
+                tiempo_llegada = reloj + generaLlegada(tlleg); //determinamos cuando llegará
                                                             //el siguiente cliente
                 if (servidor_libre)                            //si el servidor está ocioso
                 {
                     servidor_libre = false;                        //deja de estarlo
-                    float servicio = generaServicio(tserv);
-                    tiempo_salida = reloj + static_cast<long long int>(servicio); //determinamos cuando saldrá
+                    tiempo_salida = reloj + generaServicio(tserv); //determinamos cuando saldrá
                                                                 //ese cliente que acaba de llegar
                     ocio += reloj - inicio_ocio;                   //acumulamos el ocio hasta este momento
                 }
@@ -100,8 +96,7 @@ int main(int argc, char *argv[])
                                                                 //este caso disminuyó en uno
                     encola--;                                     //hay un cliente menos en cola
 
-                    float servicio = generaServicio(tserv);
-                    tiempo_salida = reloj + static_cast<long long int>(servicio); //determinamos cuando saldrá
+                    tiempo_salida = reloj + generaServicio(tserv); //determinamos cuando saldrá
                                                                 //ese cliente que acaba de entrar
                 }
                 else
