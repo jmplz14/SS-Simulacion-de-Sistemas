@@ -4,7 +4,7 @@
 #include <stdbool.h>
 long long int aritmeticaEntera(int a ,long long x, int c, int m)
 {
-    return (a*x*c)%m;
+    return (a*x+c)%m;
 }
 
 long long int aritmeticaRealCaseraFloat(int a ,long long x, int c, int m){
@@ -38,20 +38,21 @@ long long int aritmeticaRealFmod(int a ,long long x, int c, int m){
 
 int main(int argc, char *argv[])
 {
-    int opcion,numVeces;
-    long long x0 = 6;
-    int a1 = 2061, a2 = 2060, c = 4321, m = 1e4;
+    int opcion,numVeces, xElegido;
+    long long x0 = 14;
+    int a, c = 4321, m = 1e4;
 
-    if (argc != 3)
+    if (argc != 4)
     {
         printf("\nSolo tenemos un argumento\n");
-        printf("<tipo aritmética> <numero de repeticiones>");
+        printf("<tipo aritmética> <numero de repeticiones> <elegir a 0 = 2060 y 1 = 2061>\n");
         exit(1);
     }
     else
     {
         opcion = atoi(argv[1]);
         numVeces = atoi(argv[2]);
+        xElegido = atoi(argv[3]);
 
         if (opcion > 4 || opcion < 0)
         {
@@ -61,6 +62,13 @@ int main(int argc, char *argv[])
             printf("2: Aritmética real casera double\n");            
             printf("3: Aritmética real casera corregida\n");
             printf("4: Aritmética real con fmod\n");
+            exit(1);
+        }
+        if (xElegido > 1 || xElegido < 0)
+        {
+            printf("Tendra 2 posibles valores:\n");
+            printf("0: a = 2060\n");
+            printf("1: a = 2061\n");
             exit(1);
         }
     }
@@ -75,26 +83,32 @@ int main(int argc, char *argv[])
         fputs("Error reservando memoria para generador triangular\n", stderr);
         exit(1);
     }
+    if (xElegido == 0){
+        a = 2060;
+    }else
+    {
+        a = 2061;
+    }
+    
 
     while(i < numVeces && repetido == false){
     
         if(opcion == 0){
-            valor = aritmeticaEntera(a2,valor,c,m);
+            valor = aritmeticaEntera(a,valor,c,m);
         }else if (opcion == 1)
         {
-            valor = aritmeticaRealCaseraFloat(a2,valor,c,m);
+            valor = aritmeticaRealCaseraFloat(a,valor,c,m);
         }else if (opcion == 2)
         {
-            valor = aritmeticaRealCaseraDouble(a2,valor,c,m);
+            valor = aritmeticaRealCaseraDouble(a,valor,c,m);
         }else if (opcion == 3)
         {
-            valor = aritmeticaRealArtesanalCorregida(a2,valor,c,m);
+            valor = aritmeticaRealArtesanalCorregida(a,valor,c,m);
         }else if (opcion == 4)
         {
-            valor = aritmeticaRealFmod(a2,valor,c,m);
+            valor = aritmeticaRealFmod(a,valor,c,m);
         }
         
-        printf("%lld\n",valor);
 
         if (repes[valor] == false){
             repes[valor] = true;
@@ -106,10 +120,13 @@ int main(int argc, char *argv[])
     }
     
     if(repetido == true){
-        printf("Se repitio en la posicion %d \n", i + 1);
+        
+        printf("Se repitió en la posición %d \n", i);
+        
+        
     }else
     {
-        printf("No se repitio nunca\n");
+        printf("No se repitió nunca\n");
     }
     
     free(repes);

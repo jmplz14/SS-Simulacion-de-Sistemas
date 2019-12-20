@@ -156,13 +156,11 @@ int main(int argc, char *argv[])
         tablademanda = construye_prop_c(100);
     }
     
-    double clave = 0.5;
-    cout << busquedaBinaria(tablademanda,100,clave);
     unsigned t0, t1;
     
     t0=clock();
 
-    cout << "s:" << "ganancia:" << "desviación" << endl;
+    //cout << "s:" << "ganancia:" << "desviación" << endl;
     for (int s = 1; s < 100; s++)
     {
         double sum = 0.0, sum2 = 0.0;
@@ -179,11 +177,11 @@ int main(int argc, char *argv[])
         }
         gananciaesperada = sum / veces;
         desviaciont = sqrt((sum2 - veces * gananciaesperada * gananciaesperada) / (veces - 1));
-        cout << s << ":" << gananciaesperada << ":" << desviaciont << endl;
+        //cout << s << ":" << gananciaesperada << ":" << desviaciont << endl;
     }
 
     t1 = clock();
-    cout << "Tiempo de Ejecución:" << double(t1-t0)/CLOCKS_PER_SEC << endl;
+    cout << veces << ":" << double(t1-t0)/CLOCKS_PER_SEC << endl;
 
     free(tablademanda);
 }

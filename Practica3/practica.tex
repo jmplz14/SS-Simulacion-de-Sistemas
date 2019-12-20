@@ -1,0 +1,95 @@
+\documentclass[]{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{subfig}
+\graphicspath{ {imagenes/} }
+\usepackage{xcolor}
+\definecolor{RoyalBlue}{cmyk}{1, 0.50, 0, 0}
+\usepackage{listings}
+\lstset{language=Java,
+	keywordstyle=\color{RoyalBlue},
+	basicstyle=\scriptsize\ttfamily,
+	commentstyle=\ttfamily\itshape\color{gray},
+	stringstyle=\ttfamily,
+	showstringspaces=false,
+	breaklines=true,
+	frameround=ffff,
+	frame=single,
+	rulecolor=\color{black}}
+
+
+
+%opening
+\title{Práctica 3 SS: Modelos de Simulación Dinámicos y Discretos}
+\author{José Manuel Pérez Lendínez, 26051613-l}
+
+\begin{document}
+\newcolumntype{M}{>{\begin{varwidth}{4cm}}l<{\end{varwidth}}}	
+	\maketitle
+	
+	
+	\newpage
+	\tableofcontents
+	\newpage
+	
+\section{Método de incremento fijo de tiempo.}
+En este caso vamos a realizar un programa que simule la carga de trabajo de un servidor. Los clientes llegan al servidor y esperan en una cola fifo hasta que este quede libre para ser utilizado. Tanto el momento en el que llegan los clientes como el tiempo que necesitan utilizar el servidor vienen dado por dos generadores de variables aleatorias independientes e idénticamente distribuidas. Estos generadores nos devolverán un valor que determinara un momento de tiempo que pasara hasta la llegada de un nuevo cliente o el tiempo de utilización del servidor. De esta manera le sumaremos este valor el tiempo actual de nuestro simulador para obtener los datos que nos interesa. 
+
+El programa recibe 4 valores como entrada con el siguiente formado.
+
+$$./simulador\ TiempoDeLlegada\ NºClientes\ TiempoDeServicio\ NºDeRepeticiones$$
+
+
+Las variables indicaran lo siguiente:
+	\begin{enumerate}
+		\item \textbf{Tiempo de llegada (tlleg)}: Sera el valor utilizado para generar los tiempos de llegadas al servidor. De forma que si le pasamos un 1 equivaldría a 60 minutos y en caso de pasarle por ejemplo 0.15 serian 9 minutos.
+		\item \textbf{Nº de clientes}: El programa para la ejecucion cuando atienda a un numero exacto de clientes, que indicaremos con este parámetro.
+		\item \textbf{Tiempo de servicio(tserv)}: Utiliza los mismos tipos de valores que la variable para tiempos de llegada. Pero en este caso indicaremos el tiempo que un cliente utiliza el servidor.
+		\item \textbf{Nº de repeticiones}: La simulación la repetiremos un cierto numero de veces para obtener la media de los resultados obtenidos. Ese numero de simulaciones sera indicado por este parámetro.
+	\end{enumerate}
+
+El simulador nos devolverá una media de tiempo ocioso del servidor y la media de clientes en cola para utilizar el servidor. 
+
+El tiempo en la simulación incrementara de forma fija en una unidad.
+Vamos a realizar realizar varias mediciones y mostrarlas en la siguiente tabla para ver como se comporta el programa para valores distintos en los parámetros de tiempo de servicio y llegada. 
+
+Para estos datos he utilizada 10000 clientes y lo he repetido 50 veces para sacar las medias.
+Para la tabla vamos a utilizar las medidas de las medidas nombradas en la practica horas, medias horas, minutos, segundos,decimas de segundos y milisegundos.
+
+Para trabar con horas tlleg = 0.15 y tserv = 0.1, si se quiera por ejemplo trabajar con medias horas solo tendríamos que multiplicar estos por 2, tlleg = 0.30 y tserv = 0.2. Otro ejemplo seria trabajar con segundos que tendríamos que multiplicar 0,15 y 0.1 por 3600.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabularx}{0.9\textwidth}{|X|X|X|X|X|}
+			\hline
+			\textbf{T. de llegada (tlleg)} & \textbf{T. servicio(tserv)}&\textbf{Media de clientes en cola} & \textbf{Media \% de tiempo ocioso Servidor} & \textbf{T. medio de ejecución (seg)} \\
+			\hline \hline
+			  0.15 & 0.1 & 0.0233562 & 0.135782 &0.00116736\\ \hline
+			  0.30 & 0.2 & 0.215516 & 2.98828 &0.00159546 \\ \hline
+			  9 & 6& 1.26906 &31.3571  &0.00200088\\ \hline
+			  540 & 360 & 1.34331 & 33.246 &0.0173753\\ \hline
+			  5400 & 3600 & 1.30638 & 33.5554 &0.150701\\ \hline
+			  54000 & 36000 & 1.35409  & 33.237 & 1.37355 \\ \hline
+
+		\end{tabularx}
+
+	\end{center}
+\end{table}
+
+En la tabla se ve claramente como los valores para las media de cliente en cola y tiempo ocioso del servidor llega un momento en que practicamente y pasan de ser muy bajas a ser siempre parecida. Esto se debe a que cunado se trabajan con unidades de tiempo altos como pueden ser las horas (tlleg = 0.15 y tserver = 0.1) o medias horas (tlleg = 0.3 y tserver = 0.2) los generadores obtienen valores muy bajos, siendo casi 0. Esto hace devuelva 1 casi siempre para el tiempo de servicio y llegada, los clientes estén llegando continuamente y el servidor este ocupado prácticamente siempre. En cambio al empezar a utilizar tiempos mas pequeños, a partir de minutos (tlleg = 9 y tserver = 9), si se tiene mas en cuenta la aleatoriedad y deja de devolver solo valores próximos a 0 consiguiendo ya resultados mas realistas.
+\newline
+
+Una vez visto esto y sabiendo que con medidas de tiempo mas pequeñas(tlleg y tserv mas grandes) analizaremos en estos el tiempo medio de cola y ocioso del servidor. Con esto vemos claramente como el servidor se mantiene ocioso prácticamente un 33\% del tiempo y en cola tenemos una media de 1.3 clientes.
+\newline
+
+A la hora de analizar el tiempo se observa como va creciendo, esto se debe a que con tiempos mas pequeños hace falta incrementar mas veces el reloj del simulador para llegar a un evento. 
+
+\end{document}
+
+

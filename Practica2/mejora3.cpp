@@ -155,9 +155,9 @@ int main(int argc, char *argv[])
     
     t0=clock();
 
-    cout << "s:"
+    /*cout << "s:"
          << "ganacia:"
-         << "desviación" << endl;
+         << "desviación" << endl;*/
     for (int s = 1; s < 100; s++)
     {
         double sum = 0.0, sum2 = 0.0;
@@ -184,7 +184,7 @@ int main(int argc, char *argv[])
     }
 
     t1 = clock();
-    cout << "Tiempo de Ejecución:" << double(t1-t0)/CLOCKS_PER_SEC << endl;
+    cout << veces << ":" << double(t1-t0)/CLOCKS_PER_SEC << endl;
     free(tablademanda);
 }
 //El programa principal debe también incluir lo siguiente:

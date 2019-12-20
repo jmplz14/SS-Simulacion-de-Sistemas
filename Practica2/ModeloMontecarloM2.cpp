@@ -46,7 +46,8 @@ float *construye_prop_b(int n) //Construye la tabla de búsqueda de
     }
     max = (n / 2) * (n + 1);
     temp[0] = n * 1.0 / max;
-
+    for (i = 1; i < n; i++)
+        temp[i] = temp[i - 1] + (float)(n - i) / max;
     return temp;
 }
 
@@ -67,7 +68,6 @@ float *construye_prop_c(int n) //Construye la tabla de búsqueda de
         temp[i] = temp[i - 1] + (float)i / max;
     for (i = (n / 2); i < n; i++)
         temp[i] = temp[i - 1] + (float)(n - i) / max;
-
     return temp;
 }
 
@@ -133,8 +133,10 @@ int main(int argc, char *argv[])
     }
 
     cout << "s:"
-         << "ganacia:"
+         << "ganancia:"
          << "desviación" << endl;
+
+    double mejor_s = 0,mejor_ganancia = 0;
     for (int s = 1; s < 100; s++)
     {
         double sum = 0.0, sum2 = 0.0;
@@ -152,8 +154,12 @@ int main(int argc, char *argv[])
         gananciaesperada = sum / veces;
         desviaciont = sqrt((sum2 - veces * gananciaesperada * gananciaesperada) / (veces - 1));
         cout << s << ":" << gananciaesperada << ":" << desviaciont << endl;
+        if(mejor_ganancia < gananciaesperada){
+            mejor_ganancia = gananciaesperada;
+            mejor_s = s;
+        }
     }
-
+    cout << "La mejor s es " << mejor_s << " con una ganancia de " << mejor_ganancia << endl;
     free(tablademanda);
 }
 //El programa principal debe también incluir lo siguiente:

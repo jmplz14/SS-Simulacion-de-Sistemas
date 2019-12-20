@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.14)  19 DEC 2019 23:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.14)  20 DEC 2019 02:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**template_Article.tex
-(./template_Article.tex
+**practica.tex
+(./practica.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 3 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -485,12 +485,31 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip43
 )
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+\col@sep=\dimen111
+\extrarowheight=\dimen112
+\NC@list=\toks18
+\extratabsurround=\skip44
+\backup@length=\skip45
+)
+\TX@col@width=\dimen113
+\TX@old@table=\dimen114
+\TX@old@col=\dimen115
+\TX@target=\dimen116
+\TX@delta=\dimen117
+\TX@cols=\count105
+\TX@ftn=\toks19
+)
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count105
-\float@exts=\toks18
+\c@float@type=\count106
+\float@exts=\toks20
 \float@box=\box28
-\@float@everytoks=\toks19
+\@float@everytoks=\toks21
 \@floatcapt=\box29
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
@@ -510,8 +529,8 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen111
-\Gin@req@width=\dimen112
+\Gin@req@height=\dimen118
+\Gin@req@width=\dimen119
 )
 (/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
@@ -522,32 +541,32 @@ Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen113
-\captionmargin@=\dimen114
-\captionwidth=\dimen115
-\caption@tempdima=\dimen116
-\caption@indent=\dimen117
-\caption@parindent=\dimen118
-\caption@hangindent=\dimen119
+\captionmargin=\dimen120
+\captionmargin@=\dimen121
+\captionwidth=\dimen122
+\caption@tempdima=\dimen123
+\caption@indent=\dimen124
+\caption@parindent=\dimen125
+\caption@hangindent=\dimen126
 )
-\c@ContinuedFloat=\count106
+\c@ContinuedFloat=\count107
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 )
-\c@KVtest=\count107
-\sf@farskip=\skip44
-\sf@captopadj=\dimen120
-\sf@capskip=\skip45
-\sf@nearskip=\skip46
-\c@subfigure=\count108
-\c@subfigure@save=\count109
-\c@lofdepth=\count110
-\c@subtable=\count111
-\c@subtable@save=\count112
-\c@lotdepth=\count113
-\sf@top=\skip47
-\sf@bottom=\skip48
+\c@KVtest=\count108
+\sf@farskip=\skip46
+\sf@captopadj=\dimen127
+\sf@capskip=\skip47
+\sf@nearskip=\skip48
+\c@subfigure=\count109
+\c@subfigure@save=\count110
+\c@lofdepth=\count111
+\c@subtable=\count112
+\c@subtable@save=\count113
+\c@lotdepth=\count114
+\sf@top=\skip49
+\sf@bottom=\skip50
 )
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
@@ -568,100 +587,56 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
-(./template_Article.aux
+) (./practica.aux)
+\openout1 = `practica.aux'.
 
-LaTeX Warning: Label `tabla:sencilla' multiply defined.
-
-
-LaTeX Warning: Label `tabla:sencilla' multiply defined.
-
-
-LaTeX Warning: Label `tabla:sencilla' multiply defined.
-
-
-LaTeX Warning: Label `tabla:sencilla' multiply defined.
-
-
-LaTeX Warning: Label `tabla:sencilla' multiply defined.
-
-
-LaTeX Warning: Label `tabla:sencilla' multiply defined.
-
-
-LaTeX Warning: Label `tabla:sencilla' multiply defined.
-
-
-LaTeX Warning: Label `tabla:sencilla' multiply defined.
-
-
-LaTeX Warning: Label `tabla:sencilla' multiply defined.
-
-
-LaTeX Warning: Label `tabla:sencilla' multiply defined.
-
-
-LaTeX Warning: Label `tabla:sencilla' multiply defined.
-
-
-LaTeX Warning: Label `tabla:sencilla' multiply defined.
-
-
-LaTeX Warning: Label `tabla:sencilla' multiply defined.
-
-
-LaTeX Warning: Label `tabla:sencilla' multiply defined.
-
-)
-\openout1 = `template_Article.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-\c@lstlisting=\count114
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+\c@lstlisting=\count115
 \AtBeginShipoutBox=\box30
-Package hyperref Info: Link coloring OFF on input line 31.
+Package hyperref Info: Link coloring OFF on input line 32.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count115
+\c@section@level=\count116
 )
-LaTeX Info: Redefining \ref on input line 31.
-LaTeX Info: Redefining \pageref on input line 31.
-LaTeX Info: Redefining \nameref on input line 31.
+LaTeX Info: Redefining \ref on input line 32.
+LaTeX Info: Redefining \pageref on input line 32.
+LaTeX Info: Redefining \nameref on input line 32.
 
-(./template_Article.out) (./template_Article.out)
+(./practica.out) (./practica.out)
 \@outlinefile=\write3
-\openout3 = `template_Article.out'.
+\openout3 = `practica.out'.
 
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count116
-\scratchdimen=\dimen121
+\scratchcounter=\count117
+\scratchdimen=\dimen128
 \scratchbox=\box31
-\nofMPsegments=\count117
-\nofMParguments=\count118
-\everyMPshowfont=\toks20
-\MPscratchCnt=\count119
-\MPscratchDim=\dimen122
-\MPnumerator=\count120
-\makeMPintoPDFobject=\count121
-\everyMPtoPDFconversion=\toks21
+\nofMPsegments=\count118
+\nofMParguments=\count119
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count120
+\MPscratchDim=\dimen129
+\MPnumerator=\count121
+\makeMPintoPDFobject=\count122
+\everyMPtoPDFconversion=\toks23
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -683,130 +658,129 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 34.
+(Font)              <12> on input line 35.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 34.
+(Font)              <8> on input line 35.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 34.
+(Font)              <6> on input line 35.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./template_Article.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 2.
-)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./practica.toc)
 \tf@toc=\write4
-\openout4 = `template_Article.toc'.
+\openout4 = `practica.toc'.
+
 
 [2]
-Overfull \hbox (29.48691pt too wide) in paragraph at lines 57--72
- [] 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 46.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 46.
+
+
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 46.
+
+
+
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 46.
+
+
+
+Overfull \hbox (20.56949pt too wide) detected at line 46
+\OML/cmm/m/it/10 :=simulador TiempoDeLlegada N[]Clientes TiempoDeServicio N[]De
+Repeticiones
  []
 
 
-Overfull \hbox (29.48691pt too wide) in paragraph at lines 78--93
- [] 
+Underfull \hbox (badness 3884) in paragraph at lines 80--80
+\OT1/cmr/bx/n/10 gada (tl-
+ []
+
+
+Underfull \hbox (badness 4765) in paragraph at lines 80--80
+[]|\OT1/cmr/bx/n/10 T. ser-vi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--80
+\OT1/cmr/bx/n/10 clientes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--80
+[]|\OT1/cmr/bx/n/10 Media
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--80
+\OT1/cmr/bx/n/10 % de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--80
+\OT1/cmr/bx/n/10 tiempo
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--80
+\OT1/cmr/bx/n/10 ocioso
+ []
+
+
+Underfull \hbox (badness 1210) in paragraph at lines 80--80
+[]|\OT1/cmr/bx/n/10 T. medio
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--80
+\OT1/cmr/bx/n/10 de eje-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--80
+\OT1/cmr/bx/n/10 cuci^^Son
  []
 
 [3]
-Overfull \hbox (29.48691pt too wide) in paragraph at lines 99--114
- [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 119--123
+Underfull \hbox (badness 10000) in paragraph at lines 85--87
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--193
+Underfull \hbox (badness 10000) in paragraph at lines 88--90
 
  []
 
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 93.
 [4]
-<img/screenshot002.png, id=89, 451.6875pt x 338.76563pt>
-File: img/screenshot002.png Graphic file (type png)
-<use img/screenshot002.png>
-Package pdftex.def Info: img/screenshot002.png  used on input line 196.
-(pdftex.def)             Requested size: 345.0pt x 258.76717pt.
- [5 <./img/screenshot002.png (PNG copy)>]
-<img/screenshot001.png, id=95, 440.39531pt x 335.00156pt>
-File: img/screenshot001.png Graphic file (type png)
-<use img/screenshot001.png>
-Package pdftex.def Info: img/screenshot001.png  used on input line 204.
-(pdftex.def)             Requested size: 345.0pt x 262.44518pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 208--210
-
- []
-
-[6 <./img/screenshot001.png (PNG copy)>]
-<img/screenshot003.png, id=101, 304.13625pt x 65.49469pt>
-File: img/screenshot003.png Graphic file (type png)
-<use img/screenshot003.png>
-Package pdftex.def Info: img/screenshot003.png  used on input line 226.
-(pdftex.def)             Requested size: 345.0pt x 74.29692pt.
-<img/screenshot005.png, id=102, 228.10219pt x 64.74188pt>
-File: img/screenshot005.png Graphic file (type png)
-<use img/screenshot005.png>
-Package pdftex.def Info: img/screenshot005.png  used on input line 233.
-(pdftex.def)             Requested size: 345.0pt x 97.92361pt.
- [7 <./img/screenshot003.png (PNG copy)> <./img/screenshot005.png>] [8]
-<img/screenshot006.png, id=123, 365.11406pt x 61.73062pt>
-File: img/screenshot006.png Graphic file (type png)
-<use img/screenshot006.png>
-Package pdftex.def Info: img/screenshot006.png  used on input line 338.
-(pdftex.def)             Requested size: 345.0pt x 58.3329pt.
- [9 <./img/screenshot006.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 374--378
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 379--381
-
- []
-
-[10] [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 517.
- [12]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 517.
- (./template_Article.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 517.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 517.
-Package rerunfilecheck Info: File `template_Article.out' has not changed.
-(rerunfilecheck)             Checksum: B65669BD54B520F3225EBEF64F402572;669.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 517.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 93.
+ (./practica.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 93.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 93.
+Package rerunfilecheck Info: File `practica.out' has not changed.
+(rerunfilecheck)             Checksum: 42FCBFBF0DB1ACCD9E9212DB78CD1FC3;74.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 93.
  ) 
 Here is how much of TeX's memory you used:
- 8453 strings out of 494923
- 125004 string characters out of 6180741
- 241410 words of memory out of 5000000
- 11647 multiletter control sequences out of 15000+600000
- 7895 words of font info for 28 fonts, out of 8000000 for 9000
+ 8458 strings out of 494923
+ 124577 string characters out of 6180741
+ 247155 words of memory out of 5000000
+ 11693 multiletter control sequences out of 15000+600000
+ 7898 words of font info for 28 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 44i,13n,42p,852b,402s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,11n,42p,845b,352s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy7.pfb>
-Output written on template_Article.pdf (12 pages, 215297 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr7.pfb>
+Output written on practica.pdf (4 pages, 100521 bytes).
 PDF statistics:
- 198 PDF objects out of 1000 (max. 8388607)
- 165 compressed objects within 2 object streams
- 52 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 500000)
+ 9 words of extra memory for PDF output out of 10000 (max. 10000000)
 

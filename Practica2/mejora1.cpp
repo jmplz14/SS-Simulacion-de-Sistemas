@@ -100,8 +100,6 @@ posicion *construye_prop_c(int n) //Construye la tabla de búsqueda de
 				
 	}
 
-    for (int j = 0; j<n; j++)
-        cout << temp[j].valor << endl;
     return temp;
 }
 
@@ -169,7 +167,7 @@ int main(int argc, char *argv[])
  
     t0=clock();
     
-    cout << "s:" << "ganacia:" << "desviación" << endl;
+    //cout << "s:" << "ganacia:" << "desviación" << endl;
     for (int s = 1; s < 100; s++)
     {
         double sum = 0.0, sum2 = 0.0;
@@ -186,10 +184,10 @@ int main(int argc, char *argv[])
         }
         gananciaesperada = sum / veces;
         desviaciont = sqrt((sum2 - veces * gananciaesperada * gananciaesperada) / (veces - 1));
-        cout << s << ":" << gananciaesperada << ":" << desviaciont << endl;
+        //cout << s << ":" << gananciaesperada << ":" << desviaciont << endl;
     }
     t1 = clock();
-    cout << "Tiempo de Ejecución:" << double(t1-t0)/CLOCKS_PER_SEC << endl;
+    cout << veces << ":" << double(t1-t0)/CLOCKS_PER_SEC << endl;
     free(tablademanda);
 }
 //El programa principal debe también incluir lo siguiente:
