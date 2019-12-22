@@ -26,8 +26,16 @@ float tparada;
 float tlleg;
 float tserv;
 float valor;
+int numRepeticiones;
 
-float reloj;;
+float total_espera_cola = 0.0; 
+float total_estancia_sistema = 0.0;
+float total_clientes_cola = 0.0;
+float total_clientes_sistema = 0.0;
+float total_longitud_colas_no_vacias = 0.0;
+float total_porcentaje_ocio = 0.0;
+int total_maxima_cola = 0;
+float reloj;
 int libres;
 int encola;
 int ensistema;
@@ -120,6 +128,7 @@ void temporizacion()
 //  printf("\n%.3f",reloj);
 }
 
+
 void llegada()
 {
 acum_sistema += (reloj - tultsuc_sistema) * ensistema;
@@ -181,9 +190,11 @@ void fin()
 parar = true; //para detener la simulaci�n
               //habr� que hacer las �ltimas actualizaciones de algunas variables
 float retrasomedio = acum_retraso/atendidos;
-printf("\nTiempo medio de espera en cola = %.3f",retrasomedio);
+total_espera_cola += retrasomedio;
+//printf("\nTiempo medio de espera en cola = %.3f",retrasomedio);
 float estanciamedia = retrasomedio + tserv;
-printf("\nTiempo medio de estancia en el sistema = %.3f",estanciamedia);
+total_estancia_sistema += estanciamedia;
+//printf("\nTiempo medio de estancia en el sistema = %.3f",estanciamedia);
 acum_cola += (reloj - tultsuc_cola) * encola;
 
 //printf("\nTiempo medio de espera en cola bis = %.3f",acum_cola/atendidos);
@@ -191,18 +202,23 @@ acum_cola += (reloj - tultsuc_cola) * encola;
 
 
 float encolamedio = acum_cola/reloj;
-printf("\nNumero medio de personas en cola = %.3f",encolamedio);
+total_clientes_cola += encolamedio;
+//printf("\nNumero medio de personas en cola = %.3f",encolamedio);
 acum_sistema += (reloj - tultsuc_sistema) * ensistema;
 float ensistemamedio = acum_sistema/reloj;
-printf("\nNumero medio de personas en el sistema = %.3f",ensistemamedio);
+total_clientes_sistema += ensistemamedio;
+//printf("\nNumero medio de personas en el sistema = %.3f",ensistemamedio);
 if (encola == 0) acum_sincola += reloj - init_sincola;
 float colasnovaciasmedio = acum_cola/(reloj - acum_sincola);
-printf("\nLongitud media de colas no vacias = %.3f",colasnovaciasmedio);
+total_longitud_colas_no_vacias += colasnovaciasmedio;
+//printf("\nLongitud media de colas no vacias = %.3f",colasnovaciasmedio);
 acum_ocio += (reloj - tultsuc_ocio) * libres;
 float porcentajemedioocio = 100*acum_ocio/(m*reloj);
-printf("\nporcentaje medio de tiempo de ocio por servidor = %.3f",porcentajemedioocio);
-printf("\nLongitud m�xima de la cola = %d",maximacola);
-printf("\n");
+total_porcentaje_ocio += porcentajemedioocio;
+//printf("\nporcentaje medio de tiempo de ocio por servidor = %.3f",porcentajemedioocio);
+//printf("\nLongitud m�xima de la cola = %d",maximacola);
+//printf("\n");
+total_maxima_cola = maximacola > total_maxima_cola? maximacola : total_maxima_cola;
 }
 
 //Si se desea monitorizar, por ejemplo el n�mero medio de clientes en sistema a lo largo del tiempo se puede usar el suceso monitor siguiente, que habr� que inicializar
@@ -227,24 +243,40 @@ void suceso()
 		 case suceso_monitor: monitor(); break;
                 }
 }
-
+void mostrarMedias(){
+  printf("\nTiempo medio de espera en cola: = %.3f",total_espera_cola/numRepeticiones);
+  printf("\nTiempo medio de estancia en el sistema: = %.3f",total_estancia_sistema/numRepeticiones);
+  printf("\nNúmero medio de clientes en cola: = %.3f",total_clientes_cola/numRepeticiones);
+  printf("\nNúmero medio de clientes en el sistema = %.3f",total_clientes_sistema/numRepeticiones);
+  printf("\nLongitud media de colas no vacías = %.3f",total_longitud_colas_no_vacias/numRepeticiones);
+  printf("\nPorcentaje de tiempo de ocio del servidor: = %.3f",total_porcentaje_ocio/numRepeticiones);
+  printf("\nLongitud de la maxima cola: = %d\n",total_maxima_cola);
+  
+}
 int main(int argc, char *argv[])
 {
+  
   int i;
 
-  if (argc != 5)
+  if (argc != 6)
     {
-     printf("\n\nFormato Argumentos -> <numero_servidores tiempo de parada tlleg tserv>\n\n");
+     printf("\n\nFormato Argumentos -> <numero_servidores tiempo de parada tlleg tserv numRepeticiones> \n\n");
      exit(1);
     }
   sscanf(argv[1],"%d",&m);
   sscanf(argv[2],"%f",&tparada);
   sscanf(argv[3],"%f",&tlleg);
   sscanf(argv[4],"%f",&tserv);
+  sscanf(argv[5],"%d",&numRepeticiones);
+    
+    for (int i = 0; i < numRepeticiones; i++){
       inicializacion();
       while (!parar)
 	   {
 	    temporizacion();
 	    suceso();
 	   }
+     
+    }
+    mostrarMedias();
 }
