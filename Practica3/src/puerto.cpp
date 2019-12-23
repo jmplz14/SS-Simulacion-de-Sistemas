@@ -530,7 +530,7 @@ int main(int argc, char *argv[])
   {
 	  printf("\n\nFormato Argumentos -> <numero_simulaciones> *<putnos de atraco> *<afecta tormentas remolcador> *<aumento velocidad remolcador>");
     printf("\nLos parametros con * no son obligtorios.");
-    printf("\nLos parametros <afecta tormentas remolcador> y <aumento velocidad remolcador> seran inidcados con 1 ser activas. Si se introduce otro entero no seran activados\n\n");
+    printf("\nLos parametros <afecta tormentas remolcador> y <aumento velocidad remolcador> seran inidcados con 1 para ser activadas. Si se introduce otro entero no seran activados\n\n");
     
 	  exit(1);
 	} 
