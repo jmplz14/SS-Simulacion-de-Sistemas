@@ -71,21 +71,21 @@ void insertar_lsuc(suc n)
   lsuc.sort(compare);
 }
 
-float generador_exponencial(float media)
+/*float generador_exponencial(float media)
 {
   float u;
   u = (float) random();
   u = u/(float)(RAND_MAX+1.0);
   return(-media*log(1-u));
-}
+}*/
 
 // Generador de tiempos entre llegadas (exponencial)
 float generallegada(float media)
-{ return generador_exponencial(media); }
+{ return media; }
 
 // Generador de tiempos de servicio (exponencial)
 float generaservicio(float media)
-{ return generador_exponencial(media); }
+{ return media; }
 
 
 /* Procedimiento inicializacion */
