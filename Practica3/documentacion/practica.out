@@ -1,2 +1,7 @@
 \BOOKMARK [1][-]{section.1}{M\351todo de incremento fijo de tiempo.}{}% 1
 \BOOKMARK [1][-]{section.2}{M\351todo de incremento variable de tiempo.}{}% 2
+\BOOKMARK [1][-]{section.3}{Estructura de un programa de simulaci\363n din\341mico y discreto.}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Simulaci\363n con un \372nico valor}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Simulaci\363n con varios servidores.}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Cambios en el software.}{section.3}% 6
+\BOOKMARK [3][-]{subsubsection.3.3.1}{A\361adir medias y derivaci\363n t\355pica.}{subsection.3.3}% 7

@@ -1,6 +1,6 @@
 \documentclass[]{article}
 
-
+\usepackage{graphicx}   
 \usepackage[utf8]{inputenc}
 \usepackage{listings}
 \usepackage{hyperref}
@@ -37,7 +37,7 @@
 	\newpage
 	\tableofcontents
 	\newpage
-	
+
 \section{Método de incremento fijo de tiempo.}
 En este caso vamos a realizar un programa que simule la carga de trabajo de un servidor. Los clientes llegan al servidor y esperan en una cola fifo hasta que este quede libre para ser utilizado. Tanto el momento en el que llegan los clientes como el tiempo que necesitan utilizar el servidor vienen dado por dos generadores de variables aleatorias independientes e idénticamente distribuidas. Estos generadores nos devolverán un valor que determinara un momento de tiempo que pasara hasta la llegada de un nuevo cliente o el tiempo de utilización del servidor. De esta manera le sumaremos este valor el tiempo actual de nuestro simulador para obtener los datos que nos interesa. 
 
@@ -115,13 +115,13 @@ Vamos a ejecutar con los mismos datos que en el ejemplo anterior para comparar.
 			
 		\end{center}
 	\end{table}
-Empecemos analizando el tiempo. En este caso el tiempo no aumenta solo una unidad, sino que salta al evento mas cercano. Esto hace que el tiempo de ejecucion no dependa de la distancia entre un evento y el estado actual, si no del numero de eventos que se den durante la ejecucion del simulador. Para este ejemplo he ejecutado para 10000 cliente, y cada cliente utiliza el servidor una vez. Solo tendremos 20000 eventos y seran lo que necesitemos procesar. Da igual la unidad que utilicemos, solo se tiene el cuenta la cantidad de evento que tendremos que ejecutar. Por tanto el tiempo medio de ejecucion como se ve en la tabla es el mismo para todos los ejemplos quitando las pequeñas sobrecargas que pudiera tener el procesador al ejecutarlors.
+Empecemos analizando el tiempo. En este caso el tiempo no aumenta solo una unidad, sino que salta al evento mas cercano. Esto hace que el tiempo de ejecucion no dependa de la distancia entre un evento y el estado actual, si no del numero de eventos que se den durante la ejecucion del simulador. Para este ejemplo he ejecutado para 10000 cliente, y cada cliente utiliza el servidor una vez. Solo tendremos 20000 eventos y seran lo que necesitemos procesar. Da igual la unidad que utilicemos, solo se tiene el cuenta la cantidad de evento que tendremos que ejecutar. Por tanto el tiempo medio de ejecucion como se ve en la tabla es el mismo para todos los ejemplos quitando las pequeñas sobrecargas que pudiera tener el procesador al ejecutarlos.
 \newline
 
 Si nos centramos en las medias de clientes en cola y tiempo ocioso del servidor, vemos que no ocurre lo mismo que con el incremento fijo. En este caso no pasamos de unas medias muy bajas a unas mas altas, sino que se mantienen las medias durante todas las ejecuciones en los mismos valores. Esto se debe a que en este caso como explique anteriormente al estar trabajando con float no tenemos el problema con unidades de tiempo grandes, como por ejemplo horas (tlleg = 0.15 y tserv = 0.1). Aunque obtengamos valores próximos a 0 con los generadores, nuestro simulador si puede trabajar con estos y no los redondea a 1 como en el apartado anterior. Con esto podemos asegurar que con el incremento variables, la unidad de tiempo que elijamos no nos afectara a la hora de obtener las medias.
 \newline
 \newpage
-Vamos a comparar nuestros resultados con los resultados obtenidos teóricamente. Cuando $n \rightarrow+\infty$, sabes teoricamente que:
+Vamos a comparar nuestros resultados con los resultados obtenidos teóricamente. Cuando $n \rightarrow+\infty$, sabes teóricamente que:
  
 $$\rho=\frac{ { tserv }}{ { tII eg }},\ Q(n) \rightarrow \frac{\rho^{2}}{1-\rho},\ P T O(n) \rightarrow 100 *(1-\rho)$$
 
@@ -149,15 +149,109 @@ Con esto vemos como teóricamente tenemos resultados prácticamente iguales a lo
 Vemos que no se acercan ni lo mas mínimo a los resultados teóricos. Esto ya nos asegura todo los indicios anteriores de que el método fijo tiene problemas para conseguir resultados realistas con valores altos de tiempo.
 
 
+\section{Estructura de un programa de simulación dinámico y discreto.}
+\subsection{Simulación con un único valor}
+En este apartado trabajaremos con un modelo mas avanzado del programa anterior. En este caso tendremos la opción de elegir el numero de servidores(parámetro m) que tendremos trabajando en paralelo para atender clientes. Para comprobar que nuestro modelo trabaja correctamente, utilizaremos el caso en m=1, un tlleg = 0.15 y tserv = 0.1. Para este modelo tendremos en cuenta las siguientes medidas:
 
+\begin{enumerate}
+	\item \textbf{Tiempo medio de espera en cola: }$\frac{tserv^2}{tlleg-tserv}=0.2$
+	\item \textbf{Tiempo medio de estancia en el sistema: }$\frac{tserv*tlleg}{tlleg-tserv} = 0.3$
+	\item \textbf{Número medio de clientes en cola: }$\frac{tserv^2}{tlleg*(tlleg-tserv)}=1.333$
+	\item \textbf{Número medio de clientes en el sistema: }$\frac{tserv}{tlleg-tserv}=2$
+	\item \textbf{Longitud media de colas no vacías: }$\frac{tlleg}{tlleg-tserv}=3$
+	\item \textbf{Porcentaje de tiempo de ocio del servidor: }$(1-\frac{tserv}{tlleg})*100=33.333$
+\end{enumerate}
 
+Vamos a mostrar ahora los datos obtenidos por el simulador para estos tlleg y tserv. El formato de la llamada es el siguiente:
+$$./colammk <numeroServidores> <tiempoParada> <tlleg> <tserv>$$
 
+Para los ejemplos elegiremos los siguientes parámetros utilizando varios tiempos de parada(100,1000,10000 y 100000).
+$$./colammk\ 1 <tiempoParada> 0.15\ 0.1$$
 
+\begin{table}[H]
+	\begin{center}
+		\begin{tabularx}{1\textwidth}{|X|c|c|c|c|}
+			\hline
+			 \textbf{T. Parada} & 100 & 1000 & 10000 & 100000 \\
+			\hline \hline
+			\textbf{T.medio de espera en cola}& 0.286& 0.206&0.196 & 0.200\\ \hline
+			\textbf{T. medio de estancia en el sistema}& 0.386 & 0.306&0.296 & 0.300\\ \hline
+			\textbf{Num. medio clientes en cola}& 1.939 & 1.353& 1.305&1.335\\ \hline
+			\textbf{Num. medio clientes en sistema}& 2.659 & 2.002&1.969 &2.000\\ \hline
+			\textbf{Long. media de colas no vaciás}&3.750& 3.175&2.976 &3.018\\ \hline
+			\textbf{\% de tiempo de ocio del servidor}&27.983&35.171 &33.569 &33.518\\ \hline
+		\end{tabularx}
+		
+	\end{center}
+\end{table}
 
+Si comparamos los valores obtenidos y los valores teóricos para nuestras salidas, vemos claramente como van acercándose todos los para metros a estos valores conforme subimos el tiempo de parada. Llegado a un tiempo de parada igual a $10^5$, vemos como ya obtenemos parámetros prácticamente iguales a los teóricos. Esto nos dice que partir de $10^5$ obtendremos valores muy aproximados a los teóricos y que nuestras simulaciones tendrían que acercarse a este numero para obtener resultados que podamos dar como buenos.
 
+\subsection{Simulación con varios servidores.}
+En este apartado vamos a analizar como afecta a nuestros resultados tener un mayor numero de servidores, aunque aumentaremos el tserv para los servidores. De esta forma intentaremos igualar las condiciones de un único servidor mas rápido y varios servidores mas lentos para ver como afecta el aumento en numero de servidores bajo condiciones parecidas. Para igualar el tiempo de servidor, si para un único servidor usamos tserv, para m servidores utilizamos un tiempo igual m*tserv.
+Realizaremos las pruebas con tiempo de parada $10^5$ y aumentaremos el numero de servidores de 2 en 2.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabularx}{1\textwidth}{|X|c|c|c|c|c|c|}
+			\hline
+			\textbf{Num. Servidores} & 1 & 3 & 5 & 7 & 9 & 11\\
+			\hline \hline
+			\textbf{tserv} & 0.1 & 0.3 & 0.5 & 0.7 & 0.9 & 1.1\\ \hline
+			\textbf{T.medio de espera en cola}& 0.200&0.132 &0.099 &0.076 &0.057 &0.045\\ \hline
+			\textbf{T. medio de estancia en el sistema}& 0.300 &0.432 &0.599 &0.776 &0.957 &1.145\\ \hline
+			\textbf{Num. medio clientes en cola}& 1.335 &0.881 &0.661 &0.506 &0.382 &0.302\\  \hline
+			\textbf{Num. medio clientes en sistema}& 2.000 &2.881 &3.991 &5.182 &6.382 &7.644\\ \hline
+			\textbf{Long. media de colas no vaciás}&3.018& 2.987&3.027 &3.013 &2.943 &2.918\\ \hline
+			\textbf{\% de tiempo de ocio del servidor}&33.518& 33.341&33.392 &33.206 &33.334 &33.261\\ \hline
+		\end{tabularx}
+		
+	\end{center}
+\end{table}
+Vamos a analizar estos datos detenidamente, para determinar el comportamiento del simulador y que el programa funciona correctamente.
+\begin{enumerate}
+	\item \textbf{T. medio de espera en cola: }En este caso se ve claramente una mejora. A mas servidores menos esperaran los clientes en cola. Esto se debe a que aunque se suba el tiempo que tarde un servidor en ejecutar la tarea(tserv), tendremos mas servidores a los que dar tareas y al final en vez de estar en cola esperando, estarán en un servidor ejecutando.
+	\item \textbf{T. medio de estancia en el sistema: }Este parámetro es todo lo contrario al anterior. Si los clientes en vez de en cola están el el servidor y el tserv aumenta también, se tendrá un aumento en este parámetro cada vez que aumente el numero de servidor y el tserv. 
+	\item \textbf{Num. medio de clientes en cola:}Este parámetro también cae conforme mas servidores tenemos. Esto se da por lo explicado anteriormente también. Tenemos mas servidores y los clientes que llegan es mas probable que se asignen directamente a un servidor o tengan pocos clientes en la cola antes que el. 
+	
+	\item \textbf{Numero medio de clientes en sistema: }En este caso al tener un aumento en el tserv este parámetro crecerá, estarán mas tiempo en el sistema al necesitar mas tiempo del servidor para ejecutar su tarea.
+	
+	\item \textbf{Porcentaje de tiempo de ocio del servidor: }El porcentaje de ocio no varia aunque se aumente los servidores. Esto se da porque aunque aumentemos los servidores también se aumenta el tiempo de servicio, por tanto se mantiene el tiempo de ocio igual.
+\end{enumerate}
+Como conclusión de aumentar lo servidores, tendremos una mejora para los clientes a la hora de esperar para poder realizar su servicio, aunque también tendremos un mayor tiempo de uso de los servidores y el gasto que esto puede conllevar, aunque esto se da porque se aumenta también el tserv. No obtendremos cambios en el tiempo de ocio del servidor, por lo que tendremos un 33\% de tiempo que los servidores no estarán realizando tarea.
+
+\subsection{Cambios en el software.}
+\subsubsection{Añadir medias y derivación típica.}
+Vamos a realizar un cambio en el simulador para realizar varias ejecuciones y obtener las medias y desviación típica para estas medias. 
+Para analizar este cambio vamos a ver como afectan el numero de simulaciones probando 10,100 y 1000 simulaciones, para el programa con 1 servidor, tserv = 9, tlleg = 6 y un tiempo de parada de 10000. Cambio este tsev y tlleg a estos valores porque al trabajar con estos números, el tiempo de ejecución es mas rápidos y puedo realizar mas simulaciones.
+
+Para la ejecucion solo tenemos que añadir un nuevo parámetro que nos da el numero de simulaciones:
+
+\scalebox{0.8}{%
+$./colammk <numeroServidores> <tiempoParada> <tlleg> <tserv> <numRepeticiones>$}
+
+Vamos a mostrar los datos medidos.
+\begin{table}[H]
+	\begin{center}
+		\begin{tabularx}{1\textwidth}{|X|c|c|c|}
+			\hline
+			\textbf{Num. Simulaciones} &  100 & 1000 & 2000\\
+			\hline \hline
+			\textbf{T.medio de espera en cola}& $12.002\pm2.473$ & $11.862\pm2.390$ & $11.854\pm2.475$ \\ \hline
+			\textbf{T. medio de estancia en el sistema}& $1.002\pm2.473$ & $17.862\pm2.390$ & $17.854\pm2.475$ \\ \hline
+			\textbf{Num. medio clientes en cola}& $1.338\pm0.286$ & $1.325\pm0.287$& $1.320\pm0.295$ \\  \hline
+			\textbf{Num. medio clientes en sistema}& $2.002\pm1.529$ & $1.991\pm1.519$& $1.985\pm1.516$ \\ \hline
+			\textbf{Long. media de colas no vaciás}& $3.006\pm0.486$ & $2.962\pm0.445$& $2.965\pm0.467$ \\ \hline
+			\textbf{\% de tiempo de ocio del servidor}& $33.537\pm2.686$ & $33.321\pm2.687$& $33.534\pm2.801$ \\ \hline
+			\textbf{Longitud de la máxima cola}& $12.705\pm3.155$  &$12.200\pm2.486$& $12.991\pm3.210$ \\ \hline
+		\end{tabularx}
+		
+	\end{center}
+\end{table}
+C
 \end{document}
 
-Vamos a ve
+
 
 
 

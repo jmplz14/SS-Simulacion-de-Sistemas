@@ -92,7 +92,8 @@ float generaservicio(float media)
 void inicializacion()
 {
 
-srandom(time(NULL));
+lsuc.clear();
+cola.clear();
 reloj = 0.0;
 libres = m;
 encola = 0;
@@ -115,6 +116,7 @@ insertar_lsuc(nodo);
 nodo.suceso = suceso_finsimulacion;
 nodo.tiempo = reloj+tparada;
 nodo.retraso = nada;
+
 insertar_lsuc(nodo); //tparada es un par�metro de entrada al programa
 //Inicializar el suceso monitor si que quiere trazar alguna medida del rendimiento a lo largo del tiempo, no solo al final
 /* 
@@ -123,6 +125,7 @@ nodo.tiempo = reloj+1.0;
 nodo.retraso = nada;
 insertar_lsuc(nodo);
 */
+ 
 parar = false;
 }
 
@@ -198,11 +201,11 @@ parar = true; //para detener la simulaci�n
               //habr� que hacer las �ltimas actualizaciones de algunas variables
 float retrasomedio = acum_retraso/atendidos;
 total_espera_cola += retrasomedio;
-des_espera_cola += retrasomedio * retrasomedio;
+des_espera_cola += pow(retrasomedio, 2);
 //printf("\nTiempo medio de espera en cola = %.3f",retrasomedio);
 float estanciamedia = retrasomedio + tserv;
 total_estancia_sistema += estanciamedia;
-des_estancia_sistema += estanciamedia * estanciamedia;
+des_estancia_sistema += pow(estanciamedia, 2);
 //printf("\nTiempo medio de estancia en el sistema = %.3f",estanciamedia);
 acum_cola += (reloj - tultsuc_cola) * encola;
 
@@ -212,22 +215,22 @@ acum_cola += (reloj - tultsuc_cola) * encola;
 
 float encolamedio = acum_cola/reloj;
 total_clientes_cola += encolamedio;
-des_clientes_cola += encola * encola;
+des_clientes_cola += pow(encolamedio, 2);
 //printf("\nNumero medio de personas en cola = %.3f",encolamedio);
 acum_sistema += (reloj - tultsuc_sistema) * ensistema;
 float ensistemamedio = acum_sistema/reloj;
 total_clientes_sistema += ensistemamedio;
-des_clientes_sistema += ensistemamedio*ensistemamedio;
+des_clientes_sistema += pow(ensistemamedio, 2);
 //printf("\nNumero medio de personas en el sistema = %.3f",ensistemamedio);
 if (encola == 0) acum_sincola += reloj - init_sincola;
 float colasnovaciasmedio = acum_cola/(reloj - acum_sincola);
 total_longitud_colas_no_vacias += colasnovaciasmedio;
-des_longitud_colas_no_vacias += colasnovaciasmedio * colasnovaciasmedio;
+des_longitud_colas_no_vacias += pow(colasnovaciasmedio, 2);
 //printf("\nLongitud media de colas no vacias = %.3f",colasnovaciasmedio);
 acum_ocio += (reloj - tultsuc_ocio) * libres;
 float porcentajemedioocio = 100*acum_ocio/(m*reloj);
 total_porcentaje_ocio += porcentajemedioocio;
-des_porcentaje_ocio += porcentajemedioocio * porcentajemedioocio;
+des_porcentaje_ocio += pow(porcentajemedioocio, 2);;
 //printf("\nporcentaje medio de tiempo de ocio por servidor = %.3f",porcentajemedioocio);
 //printf("\nLongitud m�xima de la cola = %d",maximacola);
 //printf("\n");
@@ -267,35 +270,34 @@ float desviacion(float des, float media){
 void mostrarMediasYDesviacion(){
 
   float media_espera_cola = total_espera_cola/numRepeticiones;
-  cout << desviacion(des_espera_cola, media_espera_cola);
-  des_espera_cola = desviacion(des_espera_cola, media_espera_cola);
+  float dev_espera_cola = desviacion(des_espera_cola, media_espera_cola);
   printf("\nTiempo medio de espera en cola: = %.3f",media_espera_cola);
-  printf("\nDesviación de espera en cola: = %.3f",des_espera_cola);
+  printf("\nDesviación de espera en cola: = %.3f",dev_espera_cola);
 
   float media_estancia_sistema = total_estancia_sistema/numRepeticiones;
-  des_estancia_sistema = desviacion(des_estancia_sistema, media_estancia_sistema);
+  float dev_estancia_sistema = desviacion(des_estancia_sistema, media_estancia_sistema);
   printf("\nTiempo medio de estancia en el sistema: = %.3f",media_estancia_sistema);
-  printf("\nDesviación de estancia en el sistema: = %.3f",des_estancia_sistema);
+  printf("\nDesviación de estancia en el sistema: = %.3f",dev_estancia_sistema);
 
   float media_clientes_cola = total_clientes_cola/numRepeticiones;
-  des_clientes_cola = desviacion(des_clientes_cola, media_clientes_cola);
+  float dev_clientes_cola = desviacion(des_clientes_cola, media_clientes_cola);
   printf("\nNúmero medio de clientes en cola: = %.3f",media_clientes_cola);
-  printf("\nDesviación de clientes en cola: = %.3f",des_clientes_sistema);
+  printf("\nDesviación de clientes en cola: = %.3f",dev_clientes_cola);
 
   float media_clientes_sistema = total_clientes_sistema/numRepeticiones;
-  des_clientes_sistema = desviacion(des_clientes_sistema, media_clientes_cola);
+  float dev_clientes_sistema = desviacion(des_clientes_sistema, media_clientes_cola);
   printf("\nNúmero medio de clientes en el sistema = %.3f",media_clientes_sistema);
-  printf("\nDesviación de clientes en el sistema = %.3f",des_clientes_sistema);
+  printf("\nDesviación de clientes en el sistema = %.3f",dev_clientes_sistema);
 
   float media_longitud_colas_no_vacias = total_longitud_colas_no_vacias/numRepeticiones;
-  des_longitud_colas_no_vacias = desviacion(des_longitud_colas_no_vacias,media_longitud_colas_no_vacias);
+  float dev_longitud_colas_no_vacias = desviacion(des_longitud_colas_no_vacias,media_longitud_colas_no_vacias);
   printf("\nLongitud media de colas no vacías = %.3f",media_longitud_colas_no_vacias);
-  printf("\nDesviación de longuitud colas no vacías = %.3f",des_longitud_colas_no_vacias);
+  printf("\nDesviación de longuitud colas no vacías = %.3f",dev_longitud_colas_no_vacias);
 
-  float media_porcentaje_ocio = total_porcentaje_ocio/numRepeticiones;
-  des_porcentaje_ocio = desviacion(des_porcentaje_ocio, media_porcentaje_ocio);
+  float media_porcentaje_ocio = (float)total_porcentaje_ocio/numRepeticiones;
+  float dev_porcentaje_ocio = desviacion(des_porcentaje_ocio, media_porcentaje_ocio);
   printf("\nMedia Porcentaje de tiempo de ocio del servidor: = %.3f",media_porcentaje_ocio);
-  printf("\nDesviación Porcentaje de tiempo de ocio del servidor: = %.3f",des_porcentaje_ocio);
+  printf("\nDesviación Porcentaje de tiempo de ocio del servidor: = %.3f",dev_porcentaje_ocio);
 
   printf("\nLongitud de la maxima cola: = %d\n",total_maxima_cola);
 
@@ -311,7 +313,7 @@ int main(int argc, char *argv[])
 
   if (argc != 6)
     {
-     printf("\n\nFormato Argumentos -> <numero_servidores tiempo de parada tlleg tserv numRepeticiones> \n\n");
+     printf("\n\nFormato Argumentos -> <numero_servidores> <tiempo de parada> <tlleg> <tserv> <numRepeticiones> \n\n");
      exit(1);
     }
   sscanf(argv[1],"%d",&m);
@@ -319,7 +321,7 @@ int main(int argc, char *argv[])
   sscanf(argv[3],"%f",&tlleg);
   sscanf(argv[4],"%f",&tserv);
   sscanf(argv[5],"%d",&numRepeticiones);
-    
+  srandom(time(NULL));    
     for (int i = 0; i < numRepeticiones; i++){
       inicializacion();
       while (!parar)
@@ -327,7 +329,7 @@ int main(int argc, char *argv[])
 	    temporizacion();
 	    suceso();
 	   }
-     
+      cout << "Ejecutado la simulación " << i + 1 << endl;
     }
     
     mostrarMediasYDesviacion();
