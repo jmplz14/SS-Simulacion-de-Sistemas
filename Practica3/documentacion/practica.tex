@@ -233,12 +233,12 @@ $./colammk <numeroServidores> <tiempoParada> <tlleg> <tserv> <numRepeticiones>$}
 Vamos a mostrar los datos medidos.
 \begin{table}[H]
 	\begin{center}
-		\begin{tabularx}{1\textwidth}{|X|c|c|c|}
+		\begin{tabularx}{1\textwidth}{|X|c|c|c|c|}
 			\hline
 			\textbf{Num. Simulaciones} &  100 & 1000 & 2000\\
 			\hline \hline
 			\textbf{T.medio de espera en cola}& $12.002\pm2.473$ & $11.862\pm2.390$ & $11.854\pm2.475$ \\ \hline
-			\textbf{T. medio de estancia en el sistema}& $1.002\pm2.473$ & $17.862\pm2.390$ & $17.854\pm2.475$ \\ \hline
+			\textbf{T. medio de estancia en el sistema}& $18.002\pm2.473$ & $17.862\pm2.390$ & $17.854\pm2.475$ \\ \hline
 			\textbf{Num. medio clientes en cola}& $1.338\pm0.286$ & $1.325\pm0.287$& $1.320\pm0.295$ \\  \hline
 			\textbf{Num. medio clientes en sistema}& $2.002\pm1.529$ & $1.991\pm1.519$& $1.985\pm1.516$ \\ \hline
 			\textbf{Long. media de colas no vaciás}& $3.006\pm0.486$ & $2.962\pm0.445$& $2.965\pm0.467$ \\ \hline
@@ -248,7 +248,79 @@ Vamos a mostrar los datos medidos.
 		
 	\end{center}
 \end{table}
-C
+Como se ve en la tabla, tenemos una desviación muy parecida entre unos casos y otros. La diferencia principal es que por ejemplo cuando realizamos solo 100 simulaciones los resultados que nos daría pueden variar mas que en los demás. Para probar esto vamos a ejecutar otras dos veces con 100 simulaciones y vamos a comparar los datos.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabularx}{1\textwidth}{|X|c|c|c|c|}
+			\hline
+			\textbf{Num. simulacion} &  1 & 2 & 3\\
+			\hline \hline
+			\textbf{T.medio de espera en cola}& $12.002\pm2.473$ & $11.415\pm2.286$ & $12.797\pm3.322$ \\ \hline
+			\textbf{T. medio de estancia en el sistema}& $18.002\pm2.473$ & $17.415\pm2.286$ & $18.799\pm3.322$ \\ \hline
+			\textbf{Num. medio clientes en cola}& $1.338\pm0.286$ & $1.267\pm0.272$& $1.434\pm0.401$ \\  \hline
+			\textbf{Num. medio clientes en sistema}& $2.002\pm1.529$ & $1.928\pm1.490$& $2.107\pm1.607$ \\ \hline
+			\textbf{Long. media de colas no vaciás}& $3.006\pm0.486$ & $2.886\pm0.446$& $3.129\pm0.622$ \\ \hline
+			\textbf{\% de tiempo de ocio del servidor}& $33.537\pm2.686$ & $33.831\pm2.694$ & $32.727\pm2.880$ \\ \hline
+			\textbf{Longitud de la máxima cola}& $12.705\pm3.155$  &$12.350\pm2.750$& $13.480\pm3.454$ \\ \hline
+		\end{tabularx}
+		
+	\end{center}
+\end{table}
+
+Como se ve en este caso si tenemos desviaciones y valores distintos para las tres simulaciones con los mismos parámetros. En cambio cuando tenemos un numero de simulaciones mayor, estas desviaciones no tienen grandes variaciones. Realizaremos una segunda ejecucion con 1000 simulaciones para mostrarlo.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabularx}{1\textwidth}{|X|c|c|}
+			\hline
+			\textbf{Num. simulacion} &  1 & 2\\
+			\hline \hline
+			\textbf{T.medio de espera en cola}& $11.415\pm2.286$ & $11.824\pm2.553$ \\ \hline
+			\textbf{T. medio de estancia en el sistema} & $17.415\pm2.286$ & $17.824\pm2.553$ \\ \hline
+			\textbf{Num. medio clientes en cola} & $1.267\pm0.272$& $1.317\pm0.301$ \\  \hline
+			\textbf{Num. medio clientes en sistema} & $1.928\pm1.490$& $1.980\pm1.514$ \\ \hline
+			\textbf{Long. media de colas no vaciás} & $2.886\pm0.446$& $2.968\pm0.484$ \\ \hline
+			\textbf{\% de tiempo de ocio del servidor} & $33.831\pm2.694$ & $33.663\pm2.723$ \\ \hline
+			\textbf{Longitud de la máxima cola} &$12.350\pm2.750$& $12.999\pm3.189$ \\ \hline
+		\end{tabularx}
+		
+	\end{center}
+\end{table}
+Como se ve en este caso tenemos unos valores medios y desviaciones mas próximos unos a otros y con menores cambios.
+\subsubsection{Añadir distintos generadores}
+En este caso vamos a añadir dos tipos de generadores distntos para compararlos. Añadiremos un generar uniforme y otro generador que siempre devuevla el valor medio.Nuestro generador aleatorio devolvera un valor entre 0 y $2*tser$ o $2*ttleg$ dependiendo de lo que necesitemos. Todos los valores tienen la misma probabilidad de tocar. En cambio el generador de media simpre nos devuelve el mismo valor, que corresponde con la el valor de tserv o tlleg que pasemos. 
+
+Vamos a realizar la prueba para los tres generadores que tenemos, con los siguientes parametros:
+\begin{enumerate}
+	\item \textbf{Numero de servidores:} 1
+	\item \textbf{Tiempo de parada:} 10000
+	\item \textbf{Tlleg:} 9
+	\item \textbf{Tserv:} 6
+	\item \textbf{Numero de repeticiones:} 1000
+\end{enumerate} 
+Vamos a mostrar en la siguiente tabla los resultados de ejecutar estros tres generadores.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabularx}{1\textwidth}{|X|c|c|c|}
+			\hline
+			\textbf{Tipo de generador}&\textbf{ Exponencial} &  \textbf{Uniforme} & \textbf{Medio} \\
+			\hline \hline
+			\textbf{T.medio de espera en cola}& $11.415\pm2.286$ & $3.584\pm0.525$ & $0\pm0$ \\ \hline
+			\textbf{T. medio de estancia en el sistema} & $17.415\pm2.286$ & $9.584\pm0.525$ & $6\pm0$ \\ \hline
+			\textbf{Num. medio clientes en cola} & $1.267\pm0.272$& $0.399\pm0.063$ & $0\pm0$ \\  \hline
+			\textbf{Num. medio clientes en sistema} & $1.928\pm1.490$ & $1.065\pm0.991$ & $0.6\pm0.6$ \\ \hline
+			\textbf{Long. media de colas no vaciás} & $2.886\pm0.446$& $1.499\pm0.124$ & $0\pm0$ \\ \hline
+			\textbf{\% de tiempo de ocio del servidor} & $33.831\pm2.694$ & $33.408\pm1.656$ & $33.390\pm0$ \\ \hline
+			\textbf{Longitud de la máxima cola} &$12.350\pm2.750$& $5.686\pm1.220$ & $0\pm0$    \\ \hline
+		\end{tabularx}
+		
+	\end{center}
+	\end{table}
+Se ve como ninguno de estos dos nuevos generadores se acercan a los valores teóricos que se obtuvieron en los apartados anteriores y el exponencial si los obtiene. Esto nos indica que no son  buenos generadores para este problema, mostrándonos la importancia que tiene elegir un buen generador que se adapte a nuestro problema. Dentro de los dos nuevos el mejor es el uniforme ya que el medio directamente nos devuelve todos los valores prácticamente 0, lo que nos indica que la llegada de clientes para este generador hace que lleguen los clientes siempre después de que el cliente anterior ya salio de nuestro sistema.
+
+Los unicos valores que si se aproximan los tres generados a los teóricos es el porcentaje de tiempo de ocio del servidor, esto es debido a que atienden al mismo numero de clientes prácticamente igual y por tanto tendrán también la cantidad tareas a realizar seran parecidas, solo variando el tiempo de la tarea, que hace que la desviacion si sea distinta para los tres caso.
 \end{document}
 
 

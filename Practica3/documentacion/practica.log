@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.22)  24 DEC 2019 21:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.22)  25 DEC 2019 13:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -921,21 +921,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 247--247
 []|\OT1/cmr/bx/n/10 Longitud de la
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 252.
-[9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 252.
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--266
+[]|\OT1/cmr/bx/n/10 Longitud de la
+ []
+
+[9] [10]
+Underfull \hbox (badness 1394) in paragraph at lines 315--315
+[]|\OT1/cmr/bx/n/10 T.medio de es-pera en
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 319.
+[11]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 319.
  (./practica.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 252.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 252.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 319.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 319.
 Package rerunfilecheck Info: File `practica.out' has not changed.
-(rerunfilecheck)             Checksum: A2124E0A1B91DEA98A2709810F71439D;596.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 252.
+(rerunfilecheck)             Checksum: 8DBD0361379408FF6809350DBD36A5BC;686.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 319.
  ) 
 Here is how much of TeX's memory you used:
- 8494 strings out of 494861
- 124965 string characters out of 6178803
+ 8506 strings out of 494861
+ 125100 string characters out of 6178803
  248295 words of memory out of 5000000
- 11710 multiletter control sequences out of 15000+600000
+ 11711 multiletter control sequences out of 15000+600000
  8205 words of font info for 29 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
  44i,12n,42p,846b,406s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -950,10 +960,10 @@ ublic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
 0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on practica.pdf (9 pages, 155258 bytes).
+Output written on practica.pdf (11 pages, 159871 bytes).
 PDF statistics:
- 163 PDF objects out of 1000 (max. 8388607)
- 138 compressed objects within 2 object streams
- 39 named destinations out of 1000 (max. 500000)
- 57 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 186 PDF objects out of 1000 (max. 8388607)
+ 159 compressed objects within 2 object streams
+ 50 named destinations out of 1000 (max. 500000)
+ 65 words of extra memory for PDF output out of 10000 (max. 10000000)
 

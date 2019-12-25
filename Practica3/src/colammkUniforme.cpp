@@ -40,6 +40,8 @@ float total_longitud_colas_no_vacias = 0.0;
 float des_longitud_colas_no_vacias = 0.0;
 float total_porcentaje_ocio = 0.0;
 float des_porcentaje_ocio = 0.0;
+float total_log_cola = 0.0;
+float des_log_cola = 0.0;
 
 int total_maxima_cola = 0;
 float reloj;
@@ -230,11 +232,13 @@ des_longitud_colas_no_vacias += pow(colasnovaciasmedio, 2);
 acum_ocio += (reloj - tultsuc_ocio) * libres;
 float porcentajemedioocio = 100*acum_ocio/(m*reloj);
 total_porcentaje_ocio += porcentajemedioocio;
-des_porcentaje_ocio += pow(porcentajemedioocio, 2);;
+des_porcentaje_ocio += pow(porcentajemedioocio, 2);
 //printf("\nporcentaje medio de tiempo de ocio por servidor = %.3f",porcentajemedioocio);
 //printf("\nLongitud m�xima de la cola = %d",maximacola);
 //printf("\n");
 total_maxima_cola = maximacola > total_maxima_cola? maximacola : total_maxima_cola;
+total_log_cola += maximacola;
+des_log_cola += pow(maximacola, 2);
 }
 
 //Si se desea monitorizar, por ejemplo el n�mero medio de clientes en sistema a lo largo del tiempo se puede usar el suceso monitor siguiente, que habr� que inicializar
@@ -299,7 +303,10 @@ void mostrarMediasYDesviacion(){
   printf("\nMedia Porcentaje de tiempo de ocio del servidor: = %.3f",media_porcentaje_ocio);
   printf("\nDesviación Porcentaje de tiempo de ocio del servidor: = %.3f",dev_porcentaje_ocio);
 
-  printf("\nLongitud de la maxima cola: = %d\n",total_maxima_cola);
+  float media_cola_max = total_log_cola/numRepeticiones;
+  float dev_log_cola = desviacion(des_log_cola, media_cola_max);
+  printf("\nMedia longitud cola maxima: = %.3f",media_cola_max);
+  printf("\nDesviación longitud cola maxima: = %.3f\n\n",dev_log_cola);
 
   
   
