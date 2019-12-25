@@ -320,7 +320,89 @@ Vamos a mostrar en la siguiente tabla los resultados de ejecutar estros tres gen
 	\end{table}
 Se ve como ninguno de estos dos nuevos generadores se acercan a los valores teóricos que se obtuvieron en los apartados anteriores y el exponencial si los obtiene. Esto nos indica que no son  buenos generadores para este problema, mostrándonos la importancia que tiene elegir un buen generador que se adapte a nuestro problema. Dentro de los dos nuevos el mejor es el uniforme ya que el medio directamente nos devuelve todos los valores prácticamente 0, lo que nos indica que la llegada de clientes para este generador hace que lleguen los clientes siempre después de que el cliente anterior ya salio de nuestro sistema.
 
-Los unicos valores que si se aproximan los tres generados a los teóricos es el porcentaje de tiempo de ocio del servidor, esto es debido a que atienden al mismo numero de clientes prácticamente igual y por tanto tendrán también la cantidad tareas a realizar seran parecidas, solo variando el tiempo de la tarea, que hace que la desviacion si sea distinta para los tres caso.
+Los únicos valores que si se aproximan los tres generados a los teóricos es el porcentaje de tiempo de ocio del servidor, esto es debido a que atienden al mismo numero de clientes prácticamente igual y por tanto tendrán también la cantidad tareas a realizar serán parecidas, solo variando el tiempo de la tarea, que hace que la desviación si sea distinta para los tres caso.
+
+\section{Remolcador de un puerto.}
+\subsection{Prestaciones del sistema.}
+Para probar los resultados de vamos a realizar distintas ejecuciones con 10,100 y 1000 simulaciones. Vamos a comparar estos resultados en la siguiente tabla:
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabularx}{1\textwidth}{|X|c|c|c|}
+			\hline
+			\textbf{Num. simulaciones}&\textbf{10} &  \textbf{100} & \textbf{1000} \\
+			\hline \hline
+			\textbf{Num. medio barcos en cola de llegada}& $1.1019\pm0.3485$ & $1.1340\pm0.3843$ & $1.2274\pm0.5185$ \\ \hline
+			\textbf{Num. medio barcos en cola de salidas}& $0.0265\pm0.0041$ & $0.0287\pm0.0031$ & $0.0290\pm0.0034$ \\ \hline
+			\textbf{Tiempo medio estancia en puerto(t 0)}& $32.5089\pm3.6048$ & $33.0585\pm7.2307$ & $33.8608\pm5.5048$ \\ \hline
+			\textbf{Tiempo medio estancia en puerto(t 1)}& $38.2785\pm4.0889$ & $38.8529\pm4.0461$ & $39.8520\pm5.5709$ \\ \hline
+			\textbf{Tiempo medio estancia en puerto(t 2)}& $50.3931\pm3.7226$ & $50.5921\pm4.2212$ & $51.7220\pm5.7109$ \\ \hline
+			\textbf{\% tiempo remolcador desocupado}& $80.5595\pm0.1545$ & $80.6229\pm0.1628$ & $80.6299\pm0.1963$ \\ \hline
+			\textbf{\% tiempo remolcador viajando vació}& $1.3482\pm0.3286$  & $1.2711\pm0.2389$ & $1.2563\pm0.2286$ \\ \hline
+			\textbf{\% tiempo remolcador llevando barco}& $18.0923\pm0.2671$  & $18.1060\pm0.2389$ & $18.1138\pm0.2382$ \\ \hline
+			\textbf{\% tiempo de puntos de atraque libre}& $13.5710\pm2.3110$  & $13.0120\pm1.4359$ & $12.9967\pm1.3794$ \\ \hline
+			\textbf{\% tiempo de puntos de atraque ocupadas sin cargar}& $0.8827\pm0.1354$ & $0.9557\pm0.1019$ & $0.9671\pm0.1131$ \\ \hline
+			\textbf{\% tiempo de puntos de atraque ocupadas cargando}& $85.5464\pm2.2571$ & $86.0323\pm1.4156$ & $86.0362\pm1.3645$ \\ \hline
+		\end{tabularx}
+		
+	\end{center}
+\end{table}
+
+Como se ve en las diferencias entre 100 y 1000 simulaciones es muy pequeña en casi todas las variables que calcula el programa, en cambio si tenemos una diferencia mayor con 10 simulaciones. Por tanto a partir de ahora usaremos 1000 simulaciones para las siguientes ejecuciones que realicemos. 
+
+Empezando por las primeras variable se ve claramente como se suele tener en cola de llegada un solo barco en espera para ser cargado, todo lo contrario ocurre cuando se quiere abandonar el puerto por parte de un barco. Esta variable esta muy cercana a 0, por tanto, no tendremos barcos en espera para salir del puerto, saliendo justo después de cargar prácticamente. 
+
+El tiempo de estancia medio en puerto, tiende a ser unas 14 o 15 horas mas que el tiempo de carga. Esto se cumple en los tres tipos de barco, lo que nos indicaría que aparte de el tiempo de carga, en las demas tareas (llegar al anclaje, salir del puerto y esperas para el remolcador) ocuparían estas 14 o 15 horas extra.
+
+En cuanto al remolcador se ve que esta un 80\% del tiempo desocupada, esto podria ser debido a que los barcos tardan mucho en ser cargados y ese tiempo el remolcador solo esta a la espera de una nueva llegada. El resto del tiempo el remolcador utiliza un 18\% en remolcar barcos y solo un 1.2\% para los viajes realizados para llegar a los barcos en espera para entrar o volver al puerto sin remolcar nada. 
+
+El tiempo en punto de atraque ocupados sin carga nos demuestra lo dicho anteriormente, ya que solo es un 0.95\% del tiempo y esto nos indicaría que los barcos no esperan mucho a ser llevados fuera del puerto despumes de ser cargados. 
+Los puntos de atraque pertenecen un 86\% del tiempo ocupado. 
+
+\subsection{Modificaciones del simulador.}
+En este caso vamos a realizar y analizar las siguientes modificaciones:
+\begin{enumerate}
+	\item \textbf{M1:} Modificar el numero de puntos de atraque a 4.
+	\item \textbf{M2:} Modificar el numero de puntos de atraque a 5.
+	\item \textbf{M3:}Añadir remolcador sin que le afecte las tormentas.
+	\item \textbf{M4:}Añadir un remolcador mas rápido, de 0.25 a 0.15.
+\end{enumerate}
+
+Para estos análisis añadiremos una nueva variable que calculara el total de toneladas cargadas. Vamos a mostrar los resultados.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabularx}{1\textwidth}{|X|c|c|c|c|c|}
+			\hline
+			\textbf{opcion}&\textbf{no modf} &  \textbf{M1} & \textbf{M2} &\textbf{M3} & \textbf{M4}\\
+			\hline \hline
+			\textbf{Num. medio barcos en cola de llegada}& 1.2274 & 0.0866 &0.0473 &1.0183 &1.2033 \\ \hline
+			\textbf{Num. medio barcos en cola de salidas}& 0.0290& 0.0289& 0.0293 &0.0109 &0.0281 \\ \hline
+			\textbf{Tiempo medio estancia en puerto(t 0)}& 33.8608& 21.2781&20.8495 &31.3566 &33.6767 \\ \hline
+			\textbf{Tiempo medio estancia en puerto(t 1)}& 39.8520& 27.2861&26.8474 &37.3550 &39.5179 \\ \hline
+			\textbf{Tiempo medio estancia en puerto(t 2)}& 51.7220& 39.2557&38.8356 &49.2504 &51.4262 \\ \hline
+			\textbf{\% tiempo remolcador desocupado}& 80.6299&78.2378 &77.8616 &80.5312 &81.1309 \\ \hline
+			\textbf{\% tiempo remolcador viajando vació}& 1.2563& 3.6381&3.9926 &1.3677 &0.7665 \\ \hline
+			\textbf{\% tiempo remolcador llevando barco}& 18.1138& 18.1241&18.1459 &18.1011 &18.1027 \\ \hline
+			\textbf{\% tiempo de puntos de atraque libre}& 12.9967& 34.7102&47.6846 &13.6251 &13.0614 \\ \hline
+			\textbf{\% tiempo de puntos de atraque ocupadas sin cargar}& 0.9671 &0.7213 &0.5856 &0.3644 & 0.9373\\ \hline
+			\textbf{\% tiempo de puntos de atraque ocupadas cargando}& 86.0362 &64.5686 &51.7298 & 85.9874 &86.0012 \\ \hline
+			\textbf{Media de toneladas cargadas}& 1780254 & 1783296 & 1785603& 1781629 & 1781032  \\ \hline
+		\end{tabularx}
+		
+	\end{center}
+\end{table}
+
+La primera columna muestra los datos sin realizar ninguna modificación. Una vez sabido esto pasemos a analizar los resultados.
+
+Vamos a analizar primero las modificaciones de aumento de puntos de atraque(M1 y M2). En este caso se ve claramente como el aumento de atraques mejora siempre la cantidad de barcos en cola tanto para salir como para entrar del puerto. Ya que se mejora los tiempos de espera, también se mejorara el tiempo medio de estancia en el puerto al esperar menos tiempo para entrar o salir. El tiempo de remolcador desocupado mejora un poco, aunque no mas de un 3\%, aumentando el porcentaje de tiempo viajando vació. También cambiaran el porcentaje de tiempo que los puntos de atraque están ocupado cargando puesto que al tener mas tendremos mas posibilidad de que un punto de atraque este vació.
+
+La modificación para que al remolcador no le afecte las tormentas mejora un poco el numero medio de barcos en cola de llegada y salida, aunque menos que en el caso anterior. Los tiempos de estancia en puerto también mejoran un poco pero también menos que antes. Esto se debe a que no tendrán que esperar para entrar o salir que termine una tormenta. El tiempo de puntos de atraque sin cargar también mejor por el mismo motivo, no se espera a la finalización de una tormenta para retirar el barco.
+
+Si se modifica la velocidad del cargero(M4) se consiguen mejorar en todos los datos que tiene que ver con los remolcadores(espera en colas, tiempos de estancia, tiempos de remolcador y demas) pero siendo una mejor muy pequeña, puesto que los remolcadores tienen mucho tiempo de remolcador desocupado y esto hace que no afecte mucho al sistema. El único parámetro que si mejora mas es el tiempo viajando vació del remolcador. 
+
+En cuanto a las toneladas cargada de media para cada ejecucion, vemos como el mejor dato lo obtenemos en el caso de aumentar los numeros de atraques, siendo el mejor en el caso de 5 atraques. Las otras dos mejoras y el valor inicial del pograma sin mejora nos dan valores muy parecidos entre si. Y aunque los puntos de atraque nos dan una mejora tampoco es muy grande. 
+Debido a todo lo analizado anteriormente, la mejor opción para mejorar el puerto seria aumentar le numero de atraques que tengamos disponibles.
 \end{document}
 
 

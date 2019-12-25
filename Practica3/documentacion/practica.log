@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.22)  25 DEC 2019 13:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.22)  25 DEC 2019 19:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -927,25 +927,217 @@ Underfull \hbox (badness 10000) in paragraph at lines 266--266
  []
 
 [9] [10]
-Underfull \hbox (badness 1394) in paragraph at lines 315--315
+Underfull \hbox (badness 1394) in paragraph at lines 317--317
 []|\OT1/cmr/bx/n/10 T.medio de es-pera en
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 319.
-[11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 319.
+
+Underfull \hbox (badness 1205) in paragraph at lines 346--346
+[]|\OT1/cmr/bx/n/10 Num. medio
+ []
+
+
+Underfull \hbox (badness 1205) in paragraph at lines 346--346
+[]|\OT1/cmr/bx/n/10 Num. medio
+ []
+
+
+Underfull \hbox (badness 1005) in paragraph at lines 346--346
+[]|\OT1/cmr/bx/n/10 Tiempo medio
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--346
+\OT1/cmr/bx/n/10 es-tancia en
+ []
+
+
+Underfull \hbox (badness 1005) in paragraph at lines 346--346
+[]|\OT1/cmr/bx/n/10 Tiempo medio
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--346
+\OT1/cmr/bx/n/10 es-tancia en
+ []
+
+
+Underfull \hbox (badness 1005) in paragraph at lines 346--346
+[]|\OT1/cmr/bx/n/10 Tiempo medio
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--346
+\OT1/cmr/bx/n/10 es-tancia en
+ []
+
+
+Underfull \hbox (badness 2111) in paragraph at lines 346--346
+[]|\OT1/cmr/bx/n/10 % tiempo re-
+ []
+
+
+Underfull \hbox (badness 4266) in paragraph at lines 346--346
+\OT1/cmr/bx/n/10 mol-cador des-
+ []
+
+
+Underfull \hbox (badness 2111) in paragraph at lines 346--346
+[]|\OT1/cmr/bx/n/10 % tiempo re-
+ []
+
+
+Underfull \hbox (badness 7379) in paragraph at lines 346--346
+\OT1/cmr/bx/n/10 mol-cador vi-a-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--346
+[]|\OT1/cmr/bx/n/10 % tiempo
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--346
+\OT1/cmr/bx/n/10 re-mol-cador
+ []
+
+
+Underfull \hbox (badness 3701) in paragraph at lines 346--346
+[]|\OT1/cmr/bx/n/10 % tiempo de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--346
+\OT1/cmr/bx/n/10 pun-tos de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--346
+[]|\OT1/cmr/bx/n/10 % tiempo
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--346
+\OT1/cmr/bx/n/10 de pun-tos
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--346
+\OT1/cmr/bx/n/10 de atraque
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--346
+\OT1/cmr/bx/n/10 ocu-padas sin
+ []
+
+
+Underfull \hbox (badness 3701) in paragraph at lines 346--346
+[]|\OT1/cmr/bx/n/10 % tiempo de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--346
+\OT1/cmr/bx/n/10 pun-tos de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--346
+\OT1/cmr/bx/n/10 atraque ocu-
+ []
+
+[11] [12] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+[]|\OT1/cmr/bx/n/10 Tiempo medio
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+\OT1/cmr/bx/n/10 es-tancia en
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+[]|\OT1/cmr/bx/n/10 Tiempo medio
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+\OT1/cmr/bx/n/10 es-tancia en
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+[]|\OT1/cmr/bx/n/10 Tiempo medio
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+\OT1/cmr/bx/n/10 es-tancia en
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+\OT1/cmr/bx/n/10 cador des-ocu-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+\OT1/cmr/bx/n/10 cador vi-a-jando
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+\OT1/cmr/bx/n/10 cador ll-e-vando
+ []
+
+
+Underfull \hbox (badness 6445) in paragraph at lines 391--391
+\OT1/cmr/bx/n/10 tos de atraque
+ []
+
+
+Underfull \hbox (badness 6445) in paragraph at lines 391--391
+\OT1/cmr/bx/n/10 tos de atraque
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+\OT1/cmr/bx/n/10 ocu-padas car-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+[]|\OT1/cmr/bx/n/10 Media de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+\OT1/cmr/bx/n/10 toneladas car-
+ []
+
+[14]
+Overfull \hbox (19.50063pt too wide) in paragraph at lines 398--399
+[]\OT1/cmr/m/n/10 Vamos a analizar primero las mod-i-fi-ca-ciones de au-mento d
+e pun-tos de atraque(M1
+ []
+
+[15]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 403.
+ [16]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 403.
  (./practica.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 319.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 319.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 403.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 403.
 Package rerunfilecheck Info: File `practica.out' has not changed.
-(rerunfilecheck)             Checksum: 8DBD0361379408FF6809350DBD36A5BC;686.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 319.
+(rerunfilecheck)             Checksum: 206BA91B60D0121EE209ACFF7C838C96;899.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 403.
  ) 
 Here is how much of TeX's memory you used:
- 8506 strings out of 494861
- 125100 string characters out of 6178803
- 248295 words of memory out of 5000000
- 11711 multiletter control sequences out of 15000+600000
+ 8523 strings out of 494861
+ 125275 string characters out of 6178803
+ 251295 words of memory out of 5000000
+ 11714 multiletter control sequences out of 15000+600000
  8205 words of font info for 29 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
  44i,12n,42p,846b,406s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -960,10 +1152,10 @@ ublic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
 0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on practica.pdf (11 pages, 159871 bytes).
+Output written on practica.pdf (16 pages, 171499 bytes).
 PDF statistics:
- 186 PDF objects out of 1000 (max. 8388607)
- 159 compressed objects within 2 object streams
- 50 named destinations out of 1000 (max. 500000)
- 65 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 230 PDF objects out of 1000 (max. 8388607)
+ 198 compressed objects within 2 object streams
+ 64 named destinations out of 1000 (max. 500000)
+ 89 words of extra memory for PDF output out of 10000 (max. 10000000)
 

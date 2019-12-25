@@ -6,3 +6,6 @@
 \contentsline {subsection}{\numberline {3.3}Cambios en el software.}{9}{subsection.3.3}
 \contentsline {subsubsection}{\numberline {3.3.1}A\IeC {\~n}adir medias y derivaci\IeC {\'o}n t\IeC {\'\i }pica.}{9}{subsubsection.3.3.1}
 \contentsline {subsubsection}{\numberline {3.3.2}A\IeC {\~n}adir distintos generadores}{10}{subsubsection.3.3.2}
+\contentsline {section}{\numberline {4}Remolcador de un puerto.}{12}{section.4}
+\contentsline {subsection}{\numberline {4.1}Prestaciones del sistema.}{12}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Modificaciones del simulador.}{14}{subsection.4.2}
