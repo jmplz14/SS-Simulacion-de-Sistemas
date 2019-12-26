@@ -401,10 +401,52 @@ La modificación para que al remolcador no le afecte las tormentas mejora un poc
 
 Si se modifica la velocidad del cargero(M4) se consiguen mejorar en todos los datos que tiene que ver con los remolcadores(espera en colas, tiempos de estancia, tiempos de remolcador y demas) pero siendo una mejor muy pequeña, puesto que los remolcadores tienen mucho tiempo de remolcador desocupado y esto hace que no afecte mucho al sistema. El único parámetro que si mejora mas es el tiempo viajando vació del remolcador. 
 
-En cuanto a las toneladas cargada de media para cada ejecucion, vemos como el mejor dato lo obtenemos en el caso de aumentar los numeros de atraques, siendo el mejor en el caso de 5 atraques. Las otras dos mejoras y el valor inicial del pograma sin mejora nos dan valores muy parecidos entre si. Y aunque los puntos de atraque nos dan una mejora tampoco es muy grande. 
+En cuanto a las toneladas cargada de media para cada ejecucion, vemos como el mejor dato lo obtenemos en el caso de aumentar los numeros de atraques, siendo el mejor en el caso de 5 atraques. Las otras dos mejoras y el valor inicial del programa sin mejora nos dan valores muy parecidos entre si. Y aunque los puntos de atraque nos dan una mejora tampoco es muy grande. 
 Debido a todo lo analizado anteriormente, la mejor opción para mejorar el puerto seria aumentar le numero de atraques que tengamos disponibles.
-\end{document}
 
+\section{Análisis de salida y Experimentación.}
+\subsection{Numero de simulaciones.}
+Para este apartado vamos a analizar el numero de repeticiones y simulaciones necesarias para tener buenos resultados. Vamos a quedarnos con la variable numero medio de barcos en cola de atraque(NBCA). Para esto compararemos el modelo original($NBCAA$) y el modelo con remolcador al que no afectan las tormentas($NBCAB$). 
+
+Para esto vamos a quedarnos con las veces que gana cada uno de los dos modelos, de forma que se realizaran 100 ejecuciones y con diferentes numero de simulación(1,5,10,25,50).
+No voy a realizar la ejecucion con 100, ya que en mi caso la ejecucion con 50 ha tardado unos 5 minutos en ejecutar. Para que tardara un poco menos solo ejecuto una vez el modelo sin mejores y estos datos son los que comparo con los dos modelos con mejora. 
+
+Para realizar esto he modificado el archivo de puerto para que solo devuelva el valor numérico que queremos analizar en este caso(puesto3.cpp). Ademas he realizado un pequeño script bash que ejecute este programa sin modificación y con las dos modificaciones. 
+\begin{table}[H]
+	\begin{center}
+		\begin{tabularx}{0.75\textwidth}{|X|c|c|c|c|c|}
+			\hline
+			\textbf{Num Simulaciones} &  \textbf{1} & \textbf{5} &\textbf{10} & \textbf{25} & \textbf{50}\\
+			\hline \hline
+			\textbf{Simulador inicial}&26\%  & 20\% & 15\% & 11\% & 2\% \\ \hline
+			\textbf{Mejora tormentas}& 74\%& 80\%& 85\% & 89\% &  98\%\\ \hline
+			
+		\end{tabularx}
+		
+	\end{center}
+\end{table}
+En el caso del remolcador al que no le afectan las tormentas se ve claramente como al subir el numero de simulaciones, obtenemos un resultado muy superiores pasando de un 74\% con menos simulacione, a un 98\% con 100 simulaciones. Estonos indica que los datos tomados con pocas simulaciones no son muy fiables puesto que tenemos una gran diferencia con respecto a los de mayores simulaciones.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabularx}{0.75\textwidth}{|X|c|c|c|c|c|}
+			\hline
+			\textbf{Num Simulaciones} &  \textbf{1} & \textbf{5} &\textbf{10} & \textbf{25} & \textbf{50}\\
+			\hline \hline
+			\textbf{Simulador inicial}& 39\% & 43\% & 54\% &42\%& 45\% \\ \hline
+			\textbf{Mejora velocidad}&61\% & 57\% & 46\% & 58\% & 55\% \\ \hline
+			
+		\end{tabularx}
+		
+	\end{center}
+\end{table}
+
+En el caso de mejorar el aumento de velocidad, se ve que estan bastante mas igualados aunque en 4 de las 5 simulaciones ha ganado la mejora. En este ejemplo se ve como en el ejemplo con 1 simulación nos dan resultados que nos podrian hacer creer que el la mejora es mucho mejor de lo que es realmente. Llegando a estabilizarse al rededor de un 5\%-8\% de mejora en los casos que tienen mas simulaciones.
+
+Como conclusión tenemos que el numero de simulaciones es muy importante en este metodo para obtener valores realistas y que no fallemos al decantarnos por uno u otro modelo. Siendo mas dificil en casos en los que la mejora no es muy clara.
+
+
+\end{document}
 
 
 
