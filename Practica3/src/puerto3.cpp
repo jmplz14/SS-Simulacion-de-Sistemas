@@ -426,7 +426,7 @@ void generador_informes(int simulaciones)
 	
   /*printf("\n\nINFORME ->");
   printf("\n\nNumero medio de barcos en cola de llegadas: media(%f), dt(%f)",media[0]);*/
-  printf("%f:%f",media[0],dt[1]);
+  printf("%f:%f",media[0],dt[0]);
   /*printf("\nNumero medio de barcos en cola de salidas: media(%f), dt(%f)",media[1],dt[1]);
   for (i=0; i<num_tiposbarco; i++)
      printf("\nTiempo medio de estancia en puerto (tipo %d): media(%f), dt(%f)",i,media[2+i],dt[2+i]);
