@@ -384,6 +384,7 @@ void fin_simulacion()
      }
   //printf("\nNumero medio de barcos en cola de llegadas = %f",acum_lleg/reloj);
   informe[cont_simu][0] = acum_lleg/reloj;
+  //printf(acum_lleg/relo);
   //printf("\nNumero medio de barcos en cola de salidas = %f",acum_sal/reloj);
   informe[cont_simu][1] = acum_sal/reloj;
   for (i=0; i<num_tiposbarco; i++)
@@ -426,7 +427,7 @@ void generador_informes(int simulaciones)
 	
   /*printf("\n\nINFORME ->");
   printf("\n\nNumero medio de barcos en cola de llegadas: media(%f), dt(%f)",media[0]);*/
-  printf("%f:%f",media[0],dt[0]);
+  printf("%f:%f\n",media[0],dt[0]);
   /*printf("\nNumero medio de barcos en cola de salidas: media(%f), dt(%f)",media[1],dt[1]);
   for (i=0; i<num_tiposbarco; i++)
      printf("\nTiempo medio de estancia en puerto (tipo %d): media(%f), dt(%f)",i,media[2+i],dt[2+i]);

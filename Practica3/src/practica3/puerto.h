@@ -64,7 +64,7 @@ float acum_carga;
 
 /* Parametros de entrada */
 int remolcadores = 1;
-int num_atraques = 3;
+int num_atraques = 4;
 bool remolcador_antitormenta = false;
 float tllegmin = 4.0;
 float tllegmax = 18.0;

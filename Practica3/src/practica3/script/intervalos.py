@@ -31,9 +31,6 @@ datos_vel = datos_vel[:int(sys.argv[1])]
 datos_torm = datos_torm[:int(sys.argv[1])]
 tam = np.size(datos_vel)
 diferencia = datos_vel-datos_torm
-print(diferencia)
-print(datos_vel)
-print(datos_torm)
 media = np.mean(diferencia)
 varianza = np.var(diferencia)
 

@@ -5,8 +5,10 @@ for i in {1..100}
 do  
     varSinMejora=$(./$1 $2 3)
     varSinMejora="$( cut -d ':' -f 1 <<< "$varSinMejora" )"
+    sleep 1
     varConMejoraTor=$(./$1 $2 3 1)
     varConMejoraTor="$( cut -d ':' -f 1 <<< "$varConMejoraTor" )"
+    sleep 1
     #totalTor = `expr "$totalTor" + "$varConMejoraTornum"`
     totalTor =  echo ' $totalTor + $varConMejoraTor' | bc -l
     #totalTor = $((totalTor + varConMejoraTor))
@@ -15,7 +17,7 @@ do
     varConMejoraVel="$( cut -d ':' -f 1 <<< "$varConMejoraVel" )"    
     #totalVel = `expr "$totalVel" + "$varConMejorVel"`
     totalVel = $(($totalVel + $varConMejoraVel))
-    
+    sleep 1
 
 done
 
