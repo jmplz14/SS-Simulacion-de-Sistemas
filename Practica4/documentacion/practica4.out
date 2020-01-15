@@ -1,0 +1,12 @@
+\BOOKMARK [1][-]{section.1}{Expiaci\363n del trabajo a realizar}{}% 1
+\BOOKMARK [1][-]{section.2}{Pruebas del simulador}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Valores iniciales}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Cambios en las poblaci\363n unicamente.}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Subida en la poblacion de zorros}{subsection.2.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Subida en la poblaci\363n de conejos}{subsection.2.2}% 6
+\BOOKMARK [2][-]{subsection.2.3}{Cambios en aij.}{section.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Mejoramos la eficiencia en la caza.}{subsection.2.3}% 8
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Mejoramos la natalidad de las presas}{subsection.2.3}% 9
+\BOOKMARK [3][-]{subsubsection.2.3.3}{Aumento de la importancia de la comida}{subsection.2.3}% 10
+\BOOKMARK [3][-]{subsubsection.2.3.4}{Aumento de la mortalidad de los zorros.}{subsection.2.3}% 11
+\BOOKMARK [2][-]{subsection.2.4}{Comprar Euler y Runge-Kutta}{section.2}% 12

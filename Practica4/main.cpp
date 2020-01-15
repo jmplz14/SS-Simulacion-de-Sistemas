@@ -12,9 +12,9 @@ double estado[numeq];
 double oldestado[numeq];
 int metodo = 0;
 
-void salida(ofstream& fichero)
+void salida(ofstream& fichero, double t)
 {
-    fichero << estado[0] << "," << estado[1] << endl;
+    fichero << t << "," << estado[0] << "," << estado[1] << endl;
 }
 
 void derivacion(double *est, double *f)
@@ -84,7 +84,7 @@ void integracion()
     do
     {
 
-        salida(fichero);
+        salida(fichero,t);
 
         oldestado[0] = estado[0];
         oldestado[1] = estado[1];
@@ -103,7 +103,7 @@ int main(int argc, char *argv[])
     if (argc != 11)
     {
         cout << "Parametros incorrectos, el programa tiene el siguiente formato:" << endl;
-        cout << argv[0] << " a11 a12 a21 a22 Tinicio Tfin Poblacionx Poblaciony dt" << endl;
+        cout << argv[0] << " a11 a12 a21 a22 Tinicio Tfin Poblacionx Poblaciony dt Tipo" << endl;
         exit(1);
     }
 

@@ -1,0 +1,12 @@
+\contentsline {section}{\numberline {1}Expiaci\IeC {\'o}n del trabajo a realizar}{3}{section.1}
+\contentsline {section}{\numberline {2}Pruebas del simulador}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Valores iniciales}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Cambios en las poblaci\IeC {\'o}n unicamente.}{5}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Subida en la poblacion de zorros}{5}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Subida en la poblaci\IeC {\'o}n de conejos}{7}{subsubsection.2.2.2}
+\contentsline {subsection}{\numberline {2.3}Cambios en $a_{ij}$.}{9}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Mejoramos la eficiencia en la caza.}{9}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Mejoramos la natalidad de las presas}{10}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Aumento de la importancia de la comida}{12}{subsubsection.2.3.3}
+\contentsline {subsubsection}{\numberline {2.3.4}Aumento de la mortalidad de los zorros.}{12}{subsubsection.2.3.4}
+\contentsline {subsection}{\numberline {2.4}Comprar Euler y Runge-Kutta}{13}{subsection.2.4}
