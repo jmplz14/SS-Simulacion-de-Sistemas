@@ -1,9 +1,0 @@
-\BOOKMARK [1][-]{section.1}{Construir un Modelo de Monte Carlo}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{Primer Modelo}{section.1}% 2
-\BOOKMARK [2][-]{subsection.1.2}{Primera Modificaci\363n}{section.1}% 3
-\BOOKMARK [2][-]{subsection.1.3}{Segunda Modificaci\363n}{section.1}% 4
-\BOOKMARK [2][-]{subsection.1.4}{Mejoras de Tiempo}{section.1}% 5
-\BOOKMARK [3][-]{subsubsection.1.4.1}{Ordenar en Orden Decreciente.}{subsection.1.4}% 6
-\BOOKMARK [3][-]{subsubsection.1.4.2}{Cambiar el Tipo de B\372squeda}{subsection.1.4}% 7
-\BOOKMARK [3][-]{subsubsection.1.4.3}{Probabilidad Uniforme en O\(1\)}{subsection.1.4}% 8
-\BOOKMARK [1][-]{section.2}{Generadores Congruenciales}{}% 9

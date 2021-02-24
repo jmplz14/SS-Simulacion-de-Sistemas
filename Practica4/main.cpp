@@ -23,12 +23,12 @@ void derivacion(double *est, double *f)
     f[1] = a21 * est[0] * est[1] - a22 * est[1];
 }
 
-void one_step_euler(double *inp, double *out, double tt)
+void one_step_euler(double *inp, double *out, double tt, double hh)
 {
     double f[numeq];
     derivacion(inp, f);
     for (int i = 0; i < numeq; i++)
-        out[i] = inp[i] + tt * f[i];
+        out[i] = inp[i] + hh * f[i];
 }
 
 void one_step_kutta(double *inp, double *out, double tt, double hh)
@@ -67,7 +67,7 @@ void one_step(double *inp, double *out, double tt, double hh)
 {
     if (metodo == 0)
     {
-        one_step_euler(inp, out, tt);
+        one_step_euler(inp, out, tt, hh);
     }
     else
     {
